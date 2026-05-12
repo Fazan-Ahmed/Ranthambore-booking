@@ -1,0 +1,1028 @@
+/* ===================================
+   RANTHAMBORE SAFARI WEBSITE CSS
+   Forest Theme with Clean Modern Design
+   SEO-Optimized & Mobile Responsive
+   =================================== */
+
+/* CSS Variables for Forest Theme */
+:root {
+    /* Primary Forest Colors */
+    --forest-green: #2d5016;
+    --leaf-green: #4a7c2c;
+    --light-green: #6b9e45;
+    --earth-brown: #8b6f47;
+    --sand-beige: #d4c5a9;
+    
+    /* Accent Colors */
+    --tiger-orange: #d97834;
+    --sunset-gold: #f4a460;
+    --sky-blue: #87ceeb;
+    
+    /* Neutral Colors */
+    --white: #ffffff;
+    --light-gray: #f5f5f5;
+    --medium-gray: #e0e0e0;
+    --dark-gray: #333333;
+    --text-primary: #2c3e50;
+    --text-secondary: #555555;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Typography */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-base: 16px;
+    --line-height: 1.7;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+    --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* ===================================
+   GLOBAL STYLES & RESET
+   =================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: var(--font-size-base);
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: var(--line-height);
+    color: var(--text-primary);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+    color: var(--forest-green);
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid var(--tiger-orange);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--leaf-green);
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--text-secondary);
+}
+
+a {
+    color: var(--leaf-green);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--tiger-orange);
+}
+
+ul {
+    margin-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+li {
+    margin-bottom: var(--spacing-xs);
+    color: var(--text-secondary);
+}
+
+strong {
+    color: var(--forest-green);
+    font-weight: 600;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===================================
+   STICKY HEADER & NAVIGATION
+   =================================== */
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(135deg, var(--forest-green) 0%, var(--leaf-green) 100%);
+    box-shadow: var(--shadow-md);
+    z-index: 1000;
+    padding: var(--spacing-sm) 0;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--spacing-md);
+}
+
+.logo h2 {
+    color: var(--white);
+    margin: 0;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-lg);
+    margin: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 500;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    transition: all var(--transition-normal);
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--sunset-gold);
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero-section {
+    background: linear-gradient(135deg, rgba(45, 80, 22, 0.9) 0%, rgba(74, 124, 44, 0.9) 100%),
+                url('ranthambore-hero-background.jpg') center/cover no-repeat;
+    color: var(--white);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-lg);
+    color: var(--sand-beige);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    border: none;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background-color: var(--tiger-orange);
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+    background-color: #c16828;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background-color: var(--leaf-green);
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+    background-color: var(--forest-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: var(--white);
+}
+
+.btn-success {
+    background-color: #25d366;
+    color: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-success:hover {
+    background-color: #1fb855;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: var(--white);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* ===================================
+   CONTAINER & LAYOUT
+   =================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.main-content {
+    background-color: var(--white);
+}
+
+.content-section {
+    padding: var(--spacing-xl) 0;
+}
+
+.bg-light {
+    background-color: var(--light-gray);
+}
+
+.section-image {
+    width: 100%;
+    border-radius: 8px;
+    margin: var(--spacing-lg) 0;
+    box-shadow: var(--shadow-md);
+}
+
+/* ===================================
+   ZONE CARDS - RANTHAMBORE SAFARI ZONES
+   =================================== */
+
+.zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.zone-card {
+    background: var(--white);
+    border: 2px solid var(--medium-gray);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.zone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--leaf-green);
+}
+
+.zone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+    flex-wrap: wrap;
+}
+
+.zone-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.zone-badge {
+    background-color: var(--tiger-orange);
+    color: var(--white);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.zone-card p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Zone Tips Box */
+.zone-tips {
+    background: linear-gradient(135deg, #fff5e6 0%, #ffe6cc 100%);
+    border-left: 4px solid var(--tiger-orange);
+    padding: var(--spacing-md);
+    border-radius: 6px;
+    margin-top: var(--spacing-lg);
+}
+
+.zone-tips h3 {
+    color: var(--tiger-orange);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ===================================
+   TIGER CARDS - FAMOUS TIGERS
+   =================================== */
+
+.tiger-legends {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.tiger-card {
+    background: linear-gradient(135deg, #fff9f0 0%, #fff3e0 100%);
+    border: 2px solid var(--sunset-gold);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.tiger-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.tiger-card h4 {
+    color: var(--tiger-orange);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.15rem;
+}
+
+.tiger-card p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* ===================================
+   WILDLIFE CARDS
+   =================================== */
+
+.wildlife-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.wildlife-card {
+    background: var(--white);
+    border: 2px solid var(--light-green);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.wildlife-card:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
+    border-color: var(--leaf-green);
+}
+
+.wildlife-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--forest-green);
+}
+
+.wildlife-card p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ===================================
+   SEASONS CARDS - BEST TIME TO VISIT
+   =================================== */
+
+.seasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.season-card {
+    background: var(--white);
+    border: 3px solid var(--medium-gray);
+    border-radius: 10px;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.season-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.season-card:nth-child(1) {
+    border-color: var(--light-green);
+}
+
+.season-card:nth-child(2) {
+    border-color: var(--sunset-gold);
+}
+
+.season-card:nth-child(3) {
+    border-color: var(--sky-blue);
+}
+
+.season-card h3 {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.3rem;
+}
+
+.season-card p {
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.95rem;
+}
+
+.visit-tips {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border-left: 4px solid var(--leaf-green);
+    padding: var(--spacing-md);
+    border-radius: 6px;
+    margin-top: var(--spacing-lg);
+}
+
+.visit-tips h3 {
+    color: var(--forest-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* ===================================
+   SAFARI COMPARISON - GYPSY VS CANTER
+   =================================== */
+
+.safari-comparison {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-lg) 0;
+}
+
+.safari-type {
+    background: var(--white);
+    border: 3px solid var(--leaf-green);
+    border-radius: 10px;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.safari-type h3 {
+    color: var(--forest-green);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.4rem;
+}
+
+.safari-image {
+    width: 100%;
+    border-radius: 6px;
+    margin: var(--spacing-md) 0;
+}
+
+.safari-type ul {
+    margin-left: var(--spacing-md);
+}
+
+.safari-type li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.safari-booking-info {
+    background: linear-gradient(135deg, #fff9f0 0%, #ffe6cc 100%);
+    border: 2px solid var(--tiger-orange);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.safari-booking-info h3 {
+    color: var(--tiger-orange);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ===================================
+   TRAVEL OPTIONS
+   =================================== */
+
+.travel-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+}
+
+.travel-card {
+    background: var(--white);
+    border: 2px solid var(--earth-brown);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.travel-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.travel-card h3 {
+    color: var(--earth-brown);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.3rem;
+}
+
+.accommodation-info {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+    border-left: 4px solid var(--earth-brown);
+    padding: var(--spacing-md);
+    border-radius: 6px;
+    margin-top: var(--spacing-lg);
+}
+
+.accommodation-info h3 {
+    color: var(--forest-green);
+}
+
+/* ===================================
+   TIPS GRID - TRAVEL TIPS
+   =================================== */
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.tip-card {
+    background: var(--white);
+    border: 2px solid var(--light-green);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+}
+
+.tip-card:hover {
+    transform: scale(1.02);
+    box-shadow: var(--shadow-md);
+    border-color: var(--tiger-orange);
+}
+
+.tip-card h3 {
+    color: var(--tiger-orange);
+    font-size: 1.15rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.tip-card ul {
+    margin-left: var(--spacing-md);
+}
+
+.tip-card li {
+    font-size: 0.9rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* ===================================
+   INTERNAL LINKS SECTION
+   =================================== */
+
+.internal-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.resource-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: var(--white);
+    border: 2px solid var(--medium-gray);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    transition: all var(--transition-normal);
+    box-shadow: var(--shadow-sm);
+}
+
+.resource-link:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--leaf-green);
+}
+
+.link-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+}
+
+.link-content h3 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--forest-green);
+    font-size: 1.1rem;
+}
+
+.link-content p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* ===================================
+   CTA SECTION - CONTACT
+   =================================== */
+
+.cta-section {
+    background: linear-gradient(135deg, var(--forest-green) 0%, var(--leaf-green) 100%);
+    color: var(--white);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+}
+
+.cta-section h2 {
+    color: var(--white);
+    border-bottom: 3px solid var(--sunset-gold);
+    font-size: 2.5rem;
+}
+
+.cta-section p {
+    color: var(--sand-beige);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: var(--spacing-lg) 0;
+}
+
+.contact-note {
+    font-size: 0.9rem;
+    color: var(--sand-beige);
+    font-style: italic;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+.footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.footer-column h3 {
+    color: var(--sunset-gold);
+    font-size: 1.2rem;
+    margin-bottom: var(--spacing-md);
+    border: none;
+}
+
+.footer-column p {
+    color: var(--sand-beige);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    list-style: none;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-xs);
+}
+
+.footer-links a {
+    color: var(--sand-beige);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--sunset-gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: var(--spacing-md);
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: var(--sand-beige);
+    font-size: 0.85rem;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* ===================================
+   BACK TO TOP BUTTON
+   =================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--tiger-orange);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-normal);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--forest-green);
+    transform: translateY(-5px);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - MOBILE
+   =================================== */
+
+@media (max-width: 768px) {
+    /* Typography adjustments */
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    h3 {
+        font-size: 1.25rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Navigation - Mobile Menu */
+    .navbar {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+        text-align: center;
+    }
+    
+    /* Button adjustments */
+    .cta-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+    
+    /* Grid adjustments */
+    .zones-grid,
+    .wildlife-grid,
+    .seasons-grid,
+    .safari-comparison,
+    .travel-options,
+    .tips-grid,
+    .internal-links {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Section padding */
+    .content-section {
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .hero-section {
+        min-height: 300px;
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Back to top button */
+    .back-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.25rem;
+    }
+    
+    /* Zone header adjustments */
+    .zone-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Further mobile optimizations */
+    :root {
+        --font-size-base: 15px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .section-image {
+        margin: var(--spacing-md) 0;
+    }
+    
+    .safari-comparison {
+        gap: var(--spacing-lg);
+    }
+    
+    .contact-buttons {
+        gap: var(--spacing-sm);
+    }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
+@media print {
+    .sticky-header,
+    .back-to-top,
+    .cta-buttons,
+    .contact-buttons,
+    .footer {
+        display: none;
+    }
+    
+    .content-section {
+        page-break-inside: avoid;
+    }
+    
+    a {
+        color: var(--forest-green);
+        text-decoration: underline;
+    }
+}
+
+/* ===================================
+   ACCESSIBILITY IMPROVEMENTS
+   =================================== */
+
+/* Focus states for keyboard navigation */
+a:focus,
+button:focus,
+.btn:focus {
+    outline: 3px solid var(--tiger-orange);
+    outline-offset: 2px;
+}
+
+/* Screen reader only class */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ===================================
+   PERFORMANCE OPTIMIZATIONS
+   =================================== */
+
+/* GPU acceleration for transforms */
+.zone-card,
+.wildlife-card,
+.safari-type,
+.travel-card,
+.tip-card,
+.resource-link,
+.tiger-card {
+    will-change: transform;
+}
+
+/* Lazy loading optimization */
+img[loading="lazy"] {
+    background: var(--light-gray);
+}
+
+/* ===================================
+   END OF STYLESHEET
+   =================================== */

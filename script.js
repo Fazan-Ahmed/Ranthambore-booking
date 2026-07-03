@@ -157,7 +157,6 @@ if (bookingFormMain) {
     setTimeout(() => {
       const formWrap = document.getElementById('bookingFormWrap');
       const successMsg = document.getElementById('successMsg');
-
       if (formWrap) {
         formWrap.style.display = 'none';
       }

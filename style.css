@@ -109,16 +109,103 @@
         width: 100%;
       }
     }
+/* ==============================
+   Premium Booking Announcement
+============================== */
+
+.booking-announcement{
+    /* background: linear-gradient(135deg, #ffb703, #fb8500);
+     */
+     /* background: linear-gradient(135deg, #0b3d2e, #14532d); */
+    color: #fff;
+    padding:12px 0;
+    font-size:16px;
+    font-weight:600;
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
+    position:relative;
+    z-index:9999;
+}
+
+.booking-announcement .container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.booking-announcement strong{
+    font-size:20px;
+    font-weight:800;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+}
+
+.announcement-text{
+    font-size:15px;
+    opacity:.95;
+}
+
+.announcement-btn{
+    background:#fff;
+    color:#ff6a00;
+    padding:10px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.announcement-btn:hover{
+    background:#123524;
+    color:#fff;
+}
+
+.blink-icon{
+    font-size:22px;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+    0%,100%{
+        opacity:1;
+        transform:scale(1);
+    }
+    50%{
+        opacity:.5;
+        transform:scale(1.15);
+    }
+}
+
+@media(max-width:768px){
+
+.booking-announcement .container{
+    flex-direction:column;
+    text-align:center;
+}
+
+.booking-announcement strong{
+    font-size:18px;
+}
+
+.announcement-text{
+    font-size:14px;
+}
+
+}
 
     /* ============ STICKY HEADER ============ */
     #mainNav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(13, 32, 16, 0.97);
+       background-color: (13, 32, 16, 0.97);
+      /* background: rgba(39, 206, 64, 0.97); */
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.07);
       transition: var(--transition);
+
+      /* background-color: (13, 32, 16, 0.97); */
     }
 
     .navbar-brand {
@@ -168,6 +255,48 @@
     .navbar-toggler-icon {
       filter: invert(1);
     }
+
+
+   /* Home/About/Contact Links */
+.top-links{
+    display:flex;
+    align-items:center;
+    gap: 30px;
+}
+
+.top-links a{
+    text-decoration:none;
+    color:#222;
+    font-size:15px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.top-links a:hover{
+    color:#ff9800;
+}
+
+/* Guest Blog Button */
+.guest-blog-btn{
+    background:#ff9800;
+    color:#fff !important;
+    padding:8px 16px;
+    border-radius:20px;
+}
+
+.guest-blog-btn:hover{
+    background:#e68900;
+}
+
+@media (max-width:991px){
+    .top-links{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:10px;
+    }
+}
+
 
     /* ============ HERO ============ */
     #hero {
@@ -360,6 +489,57 @@
         transform: translateX(-50%) translateY(8px)
       }
     }
+
+
+    /* ==========================
+   Contact Top Bar
+========================== */
+
+.contact-top-bar{
+    background:#ff9800;
+    color:#fff;
+    padding:10px 0;
+}
+
+.contact-top-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.contact-item{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:15px;
+    font-weight:600;
+}
+
+.contact-item a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.contact-item a:hover{
+    text-decoration:underline;
+}
+
+.contact-item i{
+    font-size:18px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.contact-top-content{
+    flex-direction:column;
+    text-align:center;
+}
+
+}
 
     /* ============ SECTION STYLES ============ */
     section {

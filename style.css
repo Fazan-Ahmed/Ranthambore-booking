@@ -115,8 +115,8 @@ h4 {
 ============================== */
 
 .booking-announcement {
-  /* background: linear-gradient(135deg, #ffb703, #fb8500);  */
-  background: linear-gradient(135deg, #0b3d2e, #14532d);
+  background: linear-gradient(135deg, #ffb703, #27df5b); 
+  /* background: linear-gradient(135deg, #0b3d2e, #14532d); */
   color: #fff;
   padding: 12px 0;
   font-size: 16px;

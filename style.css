@@ -2829,3 +2829,87 @@ footer {
   color: var(--white);
   text-decoration: underline;
 }
+
+
+
+
+/* free code hate wal responsive ka */
+
+/* Navbar */
+#mainNav {
+  width: 100%;
+  padding: 15px 0;
+  background: #fff;
+  position: relative;
+  z-index: 999;
+}
+
+/* Container */
+#mainNav .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Links */
+.top-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.top-links a {
+  text-decoration: none;
+  color: #222;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.top-links a:hover {
+  color: #ff9800;
+}
+
+
+/* Guest Blog Button */
+.guest-blog-btn {
+  background: #ff9800;
+  color: #fff !important;
+  padding: 8px 18px;
+  border-radius: 25px;
+}
+
+.guest-blog-btn:hover {
+  background: #e68900;
+}
+
+
+/* Mobile Responsive */
+@media(max-width:768px){
+
+  #mainNav {
+    padding: 12px 15px;
+  }
+
+  #mainNav .container {
+    justify-content: center;
+  }
+
+  .top-links {
+    width: 100%;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .top-links a {
+    font-size: 16px;
+  }
+
+  .guest-blog-btn {
+    display: inline-block;
+    padding: 10px 22px;
+  }
+
+}

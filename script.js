@@ -1,224 +1,121 @@
-window.addEventListener('load', () => {
-  const loader = document.getElementById('loader');
+document.addEventListener("DOMContentLoaded", function () {
 
-  if (loader) {
-    setTimeout(() => {
-      loader.classList.add('hidden');
-    }, 2000);
-  }
-});
-
-/* =========================
-   SCROLL REVEAL
-========================= */
-function revealOnScroll() {
-  const elements = document.querySelectorAll(
-    '.reveal, .reveal-left, .reveal-right'
-  );
-
-  elements.forEach((el) => {
-    const rect = el.getBoundingClientRect();
-
-    if (rect.top < window.innerHeight - 60) {
-      el.classList.add('visible');
+  /* ===== LOADER ===== */
+  const loader = document.getElementById("loader");
+  window.addEventListener("load", function () {
+    if (loader) {
+      loader.classList.add("hidden");
+      setTimeout(() => loader.remove(), 700);
     }
   });
-}
 
-window.addEventListener('scroll', revealOnScroll);
-window.addEventListener('load', revealOnScroll);
+  /* ===== SCROLL REVEAL ===== */
+  const revealEls = document.querySelectorAll(".reveal");
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  revealEls.forEach((el) => revealObserver.observe(el));
 
-/* =========================
-   SET MIN DATE FOR BOOKING
-========================= */
-(function setMinBookingDate() {
-  const dateInput = document.getElementById('fdate');
+  /* ===== MOBILE MENU TOGGLE ===== */
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const navMenu = document.getElementById("navMenu");
+  if (mobileMenuBtn && navMenu) {
+    mobileMenuBtn.addEventListener("click", function () {
+      const isOpen = navMenu.classList.toggle("open");
+      mobileMenuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      mobileMenuBtn.innerHTML = isOpen
+        ? '<i class="fas fa-times"></i>'
+        : '<i class="fas fa-bars"></i>';
+    });
 
-  if (!dateInput) return;
+    // Close mobile menu after clicking a link
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", function () {
+        navMenu.classList.remove("open");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+    });
+  }
 
-  const today = new Date();
-  today.setDate(today.getDate() + 1);
+  /* ===== BACK TO TOP ===== */
+  const backToTop = document.getElementById("backToTop");
+  if (backToTop) {
+    backToTop.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
 
-  const yyyy = today.getFullYear();
-  const mm = String(today.getMonth() + 1).padStart(2, '0');
-  const dd = String(today.getDate()).padStart(2, '0');
+  /* ===== BOOKING DATE MIN = TODAY ===== */
+  const dateInput = document.getElementById("fdate");
+  if (dateInput) {
+    const today = new Date().toISOString().split("T")[0];
+    dateInput.setAttribute("min", today);
+  }
 
-  dateInput.min = `${yyyy}-${mm}-${dd}`;
-})();
+  /* ===== EMAILJS BOOKING FORM ===== */
+  if (window.emailjs) {
+    emailjs.init({ publicKey: "YXJrgRUG35llPAtYN" });
+  }
 
-/* =========================
-   FORM VALIDATION & SUBMISSION
-========================= */
+  const form = document.getElementById("bookingForm");
+  const bookingFormWrap = document.getElementById("bookingFormWrap");
+  const successMsg = document.getElementById("successMsg");
+  const submitBtn = document.getElementById("submitBtn");
+  const formErrorMsg = document.getElementById("formErrorMsg");
 
-const bookingFormMain = document.getElementById('bookingForm');
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-if (bookingFormMain) {
-  bookingFormMain.addEventListener('submit', function (e) {
-    e.preventDefault();
+      formErrorMsg.classList.remove("visible");
 
-    let valid = true;
-
-    // Inputs
-    const name = document.getElementById('fname');
-    const phone = document.getElementById('fphone');
-    const email = document.getElementById('femail');
-    const date = document.getElementById('fdate');
-    const safari = document.getElementById('fsafari');
-    const zone = document.getElementById('fzone');
-    const shift = document.getElementById('fshift');
-    const persons = document.getElementById('fpersons');
-
-    /* ===== NAME ===== */
-    if (!name.value.trim() || name.value.trim().length < 3) {
-      name.classList.add('is-invalid');
-      valid = false;
-    } else {
-      name.classList.remove('is-invalid');
-    }
-
-    /* ===== PHONE ===== */
-    const phoneVal = phone.value.replace(/\s|\+/g, '');
-
-    if (!/^\d{10,12}$/.test(phoneVal)) {
-      phone.classList.add('is-invalid');
-      valid = false;
-    } else {
-      phone.classList.remove('is-invalid');
-    }
-
-    /* ===== EMAIL ===== */
-    if (
-      email.value.trim() &&
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())
-    ) {
-      email.classList.add('is-invalid');
-      valid = false;
-    } else {
-      email.classList.remove('is-invalid');
-    }
-
-    /* ===== DATE ===== */
-    if (!date.value) {
-      date.classList.add('is-invalid');
-      valid = false;
-    } else {
-      date.classList.remove('is-invalid');
-    }
-
-    /* ===== SAFARI ===== */
-    if (!safari.value) {
-      safari.classList.add('is-invalid');
-      valid = false;
-    } else {
-      safari.classList.remove('is-invalid');
-    }
-
-    /* ===== ZONE ===== */
-    if (!zone.value) {
-      zone.classList.add('is-invalid');
-      valid = false;
-    } else {
-      zone.classList.remove('is-invalid');
-    }
-
-    /* ===== SHIFT ===== */
-    if (!shift.value) {
-      shift.classList.add('is-invalid');
-      valid = false;
-    } else {
-      shift.classList.remove('is-invalid');
-    }
-
-    /* ===== PERSONS ===== */
-    if (!persons.value || Number(persons.value) <= 0) {
-      persons.classList.add('is-invalid');
-      valid = false;
-    } else {
-      persons.classList.remove('is-invalid');
-    }
-
-    // Stop if invalid
-    if (!valid) return;
-
-    /* =========================
-       SUBMIT PROCESS
-    ========================= */
-
-    const submitBtn = this.querySelector('.btn-submit');
-
-    if (submitBtn) {
-      submitBtn.innerHTML =
-        '<i class="fas fa-spinner fa-spin me-2"></i> Processing...';
+      // Browser validation
+      if (!form.checkValidity()) {
+        form.classList.add("was-validated");
+        Array.from(form.elements).forEach((el) => {
+          if (el.willValidate) {
+            el.classList.toggle("is-invalid", !el.checkValidity());
+          }
+        });
+        form.reportValidity();
+        return;
+      }
 
       submitBtn.disabled = true;
-    }
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> SENDING...';
 
-    // Simulate API submission
-    setTimeout(() => {
-      const formWrap = document.getElementById('bookingFormWrap');
-      const successMsg = document.getElementById('successMsg');
-      if (formWrap) {
-        formWrap.style.display = 'none';
-      }
-
-      if (successMsg) {
-        successMsg.style.display = 'block';
-
-        successMsg.scrollIntoView({
-          behavior: 'smooth',
-          block: 'center',
+      emailjs
+        .sendForm("service_zh4ejsa", "template_a8ago8p", form)
+        .then(function () {
+          bookingFormWrap.style.display = "none";
+          successMsg.classList.add("visible");
+          form.reset();
+          form.classList.remove("was-validated");
+        })
+        .catch(function (error) {
+          console.error("EmailJS error:", error);
+          formErrorMsg.classList.add("visible");
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fas fa-calendar-check me-2"></i> CHECK AVAILABILITY';
         });
-      }
+    });
 
-      // Reset button
-      if (submitBtn) {
-        submitBtn.innerHTML = 'Book Now';
-        submitBtn.disabled = false;
-      }
+    // Remove invalid state as the user types/selects
+    form.querySelectorAll(".form-control, .form-select").forEach((field) => {
+      field.addEventListener("input", () => field.classList.remove("is-invalid"));
+      field.addEventListener("change", () => field.classList.remove("is-invalid"));
+    });
+  }
 
-      bookingFormMain.reset();
-    }, 1800);
-  });
-}
-
-/* =========================
-   REAL-TIME VALIDATION CLEAR
-========================= */
-
-[
-  'fname',
-  'fphone',
-  'femail',
-  'fdate',
-  'fsafari',
-  'fzone',
-  'fshift',
-  'fpersons',
-].forEach((id) => {
-  const el = document.getElementById(id);
-
-  if (!el) return;
-
-  el.addEventListener('input', function () {
-    this.classList.remove('is-invalid');
-  });
-
-  el.addEventListener('change', function () {
-    this.classList.remove('is-invalid');
-  });
-});
-
-/* =========================
-   NAVBAR SHADOW ON SCROLL
-========================= */
-
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('mainNav');
-
-  if (!nav) return;
-
-  nav.style.boxShadow =
-    window.scrollY > 50
-      ? '0 4px 30px rgba(0,0,0,0.3)'
-      : 'none';
 });

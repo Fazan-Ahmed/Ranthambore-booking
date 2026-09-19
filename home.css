@@ -1686,6 +1686,8 @@ footer {
 
 
 .footer-linkss {
+color:  #ff9800;
+  /* color: #fff; */
   width: 100%;
   display: flex !important;
   justify-content: center;
@@ -1704,6 +1706,9 @@ footer {
   text-decoration: underline;
   white-space: nowrap;
   font-size: 14px;
+}
+.footer-linkss a:hover{
+  color: white;
 }
 
 .footer-linkss a:hover {

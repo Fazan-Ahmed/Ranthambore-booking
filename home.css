@@ -1,22 +1,4 @@
 /* ============ CSS VARIABLES ============ */
-/* :root {
-  --forest-dark: #0d2010;
-  --forest-deep: #1a3a1f;
-  --forest-mid: #2d5a27;
-  --forest-bright: #4a8c3f;
-  --amber: #e8960c;
-  --amber-light: #f5b731;
-  --earth: #8b5e3c;
-  --earth-light: #c4916a;
-  --cream: #f9f3e8;
-  --white: #ffffff;
-  --text-dark: #1a1a1a;
-  --text-muted: #5a5a5a;
-  --shadow: 0 8px 40px rgba(0, 0, 0, 0.25);
-  --radius: 16px;
-  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-} */
-/* ============ CSS VARIABLES ============ */
 :root {
   /* Forest greens — deep, richer, better contrast for dark sections */
   --forest-dark: #0b1a0f;
@@ -1700,4 +1682,46 @@ footer {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+
+.footer-linkss {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px 4vw;
+  /* margin: 0 0 25px 0; */
+  padding: 0;
+  box-sizing: border-box;
+   margin-top: 20px;
+}
+
+.footer-linkss a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: underline;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.footer-linkss a:hover {
+  text-decoration: underline;
+}
+
+
+
+/* Tablet */
+@media (max-width: 768px) {
+  .footer-linkss {
+    gap: 12px 3vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .footer-linkss {
+    gap: 10px 5vw;
+  }
 }

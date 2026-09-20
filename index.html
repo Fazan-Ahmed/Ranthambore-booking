@@ -16,7 +16,6 @@
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Ranthambore Ticket Booking" />
   <link rel="canonical" href="https://ranthamboreticketbooking.com/" />
-  <link href="https://fonts.googleapis.com/css2?family=YourFont&display=swap" rel="stylesheet" />
 
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -31,15 +30,16 @@
 
   <meta name="author" content="Ranthambore Safari Experts" />
   <meta name="publisher" content="Ranthambore Ticket Booking" />
-  <meta property="og:image" content="https://ranthamboreticketbooking.com/og-banner.webp2" />
-  <meta name="twitter:image" content="https://ranthamboreticketbooking.com/og-banner.webp2" />
+  <!-- FIXED: was "og-banner.webp2" (invalid/broken extension) -->
+  <meta property="og:image" content="https://ranthamboreticketbooking.com/og-banner.webp" />
+  <meta name="twitter:image" content="https://ranthamboreticketbooking.com/og-banner.webp" />
 
   <meta property="og:image:alt" content="Ranthambore Ticket Booking Logo" />
   <meta property="og:site_name" content="Ranthambore Ticket Booking" />
   <meta property="og:locale" content="en_IN" />
+
+  <!-- Preload the actual LCP image (must match the <img> used in the hero below) -->
   <link rel="preload" as="image" href="about-tiger.webp" fetchpriority="high" />
-
-
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -49,19 +49,27 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;900&family=Nunito:wght@400;600;700&display=swap"
-    rel="stylesheet">
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Non-blocking CSS loading: preload as style, swap to stylesheet on load.
+       This stops Bootstrap / Font Awesome / Google Fonts from blocking first paint. -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </noscript>
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-  <!-- Site CSS -->
+  <!-- Site CSS (kept render-blocking on purpose: it's small and needed for layout) -->
   <link rel="stylesheet" href="home.css">
-
 
   <script type="application/ld+json">
 {
@@ -114,22 +122,14 @@
   }
   </script>
 
-  <!-- Google Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18351151254"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-18351151254');
-  </script>
-
-  <!-- Google Analytics -->
+  <!-- Google Ads + Analytics: merged into ONE dataLayer/gtag definition (was duplicated) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FRZ6VSR4B"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-6FRZ6VSR4B');
+    gtag('config', 'AW-18351151254');
   </script>
 </head>
 
@@ -169,45 +169,22 @@
   </section>
 
   <!-- ========== HEADER / NAVBAR ========== -->
-  <!-- <header class="navbar" id="mainNav">
+  <header class="navbar" id="mainNav">
     <div class="container navbar-inner">
 
       <a href="index.html" class="logo">
-        <div class="logo-tiger">🐯</div>
+        <img src="website-logo.png" alt="Ranthambore Ticket Booking Logo" width="130" height="110"
+          fetchpriority="high" decoding="async" style="object-fit: contain;" />
         <div class="logo-text">
           <h2>RANTHAMBORE</h2>
           <span>WILDLIFE SAFARI</span>
-
         </div>
-      </a> -->
-
-       <header class="navbar" id="mainNav">
-  <div class="container navbar-inner">
-
-     <a href="index.html" class="logo">
-       <img 
-        src="website-logo.png" 
-        alt="Logo Icon" 
-        width="130" 
-        height="110" 
-        fetchpriority="high"
-        decoding="async"
-        style="object-fit: contain;"
-      />
-      <div class="logo-text">
-        <h2>RANTHAMBORE</h2>
-        <span>WILDLIFE SAFARI</span>
-      </div>
-    </a> 
-
-
+      </a>
 
       <nav class="nav-menu" id="navMenu">
         <a href="index.html" class="active">Home</a>
         <a href="#booking">Safari Enquiry</a>
-        <!-- <a href="About.html">About Us</a> -->
         <a href="ranthambore-national-park.html">About Ranthambore</a>
-        <!-- <a href="blog/index.html">Blog</a> -->
         <a href="#contact">Contact Us</a>
       </nav>
 
@@ -222,7 +199,12 @@
 
   <!-- ========== HERO ========== -->
   <section id="hero">
-    <div class="hero-bg"></div>
+    <!-- FIXED: was a CSS background-image on an empty <div class="hero-bg">.
+         That's why the earlier <link rel="preload" as="image"> never matched anything
+         reliably and LCP was 8.2s. Now it's a real <img> with fetchpriority="high",
+         which is what the preload tag and the browser's LCP detection actually need. -->
+    <img src="about-tiger.webp" alt="Royal Bengal Tiger in Ranthambore National Park" class="hero-bg-img"
+      fetchpriority="high" decoding="async" width="1920" height="1080" />
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
@@ -244,24 +226,6 @@
             <i class="fab fa-whatsapp"></i> WhatsApp Us
           </a>
         </div>
-        <!-- <div class="hero-stats">
-          <div class="stat-item"> -->
-            <!-- <span class="stat-num">10,000+</span>
-            <div class="stat-label">Happy Travellers</div>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">10+</span>
-            <div class="stat-label">Safari Zones</div>
-          </div>
-          <div class="stat-item">
-            <span class="stat-num">85%</span>
-            <div class="stat-label">Tiger Sighting Rate</div>
-          </div> -->
-          <!-- <div class="stat-item"> -->
-            <!-- <span class="stat-num">4.9★</span>
-            <div class="stat-label">Google Rating</div> -->
-          <!-- </div>
-        </div> -->
       </div>
     </div>
 
@@ -654,11 +618,11 @@
           <div class="gallery-overlay"><span class="gallery-label">🌿 Ranthambore Tiger</span></div>
         </div>
         <div class="gallery-item">
-          <img src="safari-4.jpeg" alt="Ranthambore National Park landscape" width="800" height="600" loading="lazy" />
+          <img src="safari-4.jpeg" alt="Leopard sighting in Ranthambore National Park" width="800" height="600" loading="lazy" />
           <div class="gallery-overlay"><span class="gallery-label">🏔️ Leopard</span></div>
         </div>
         <div class="gallery-item">
-          <img src="cantar-safari (1).webp" alt="Ranthambore Tiger" width="800" height="600" loading="lazy" />
+          <img src="cantar-safari (1).webp" alt="Canter safari vehicle in Ranthambore" width="800" height="600" loading="lazy" />
           <div class="gallery-overlay"><span class="gallery-label">Canter Safari</span></div>
         </div>
         <div class="gallery-item">
@@ -810,10 +774,8 @@
           <p class="footer-desc">Your most trusted partner for Ranthambore Tiger Safari Booking since 2012. Official
             permits, expert naturalists, unforgettable experiences.</p>
           <div class="social-icons">
-            <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a> -->
             <a href="https://www.instagram.com/explore_ranthambore_wild?igsi=Zjd1YXgzY3MzNHJv" class="social-icon"
               target="_blank"><i class="fab fa-instagram"></i></a>
-            <!-- <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a> -->
             <a href="https://wa.me/message/XAEGWQ5O7IZIO1" class="social-icon" target="_blank" rel="noopener"><i
                 class="fab fa-whatsapp"></i></a>
           </div>
@@ -887,7 +849,7 @@
 
   <!-- ========== SCRIPTS ========== -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
 
   <script src="script.js" defer></script>
 

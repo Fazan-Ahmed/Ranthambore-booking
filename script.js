@@ -1,9 +1,15 @@
-// Global scope loader fix (DOMReady ka wait kiye bina fast remove hoga)
+// Global scope loader fix
+// FIXED: was window.addEventListener("load", ...) which waits for EVERY
+// resource (hero image, logo, Google Maps iframe, etc.) to finish before
+// hiding the loader. On a slow connection that can take several seconds,
+// which is exactly what was inflating Speed Index. DOMContentLoaded fires
+// as soon as the HTML is parsed and deferred scripts have run — the page
+// is already usable at that point, so the loader can go away immediately.
 const loader = document.getElementById("loader");
 if (loader) {
-  window.addEventListener("load", function () {
+  document.addEventListener("DOMContentLoaded", function () {
     loader.classList.add("hidden");
-    setTimeout(() => loader.remove(), 400); // 700ms se kam karke 400ms kiya
+    setTimeout(() => loader.remove(), 400);
   }, { once: true });
 }
 
@@ -21,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" } // Optimized threshold
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
     revealEls.forEach((el) => revealObserver.observe(el));
   }
@@ -40,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // Delegated event handling (Multiple links listener ki jagah Single Listener)
+    // Delegated event handling (single listener instead of one per link)
     navMenu.addEventListener("click", function (e) {
       if (e.target.tagName === "A") {
         navMenu.classList.remove("open");
@@ -126,22 +132,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-/* ===== DEFERRED SCRIPT LOADING ===== */
-let scriptsLoaded = false;
-function loadDeferredScripts() {
-  if (scriptsLoaded) return;
-  scriptsLoaded = true;
-
-  const script = document.createElement("script");
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX";
-  script.async = true;
-  document.head.appendChild(script);
-
-  window.removeEventListener("scroll", loadDeferredScripts);
-  window.removeEventListener("mousemove", loadDeferredScripts);
-  window.removeEventListener("touchstart", loadDeferredScripts);
-}
-
-window.addEventListener("scroll", loadDeferredScripts, { passive: true });
-window.addEventListener("mousemove", loadDeferredScripts, { passive: true });
-window.addEventListener("touchstart", loadDeferredScripts, { passive: true });

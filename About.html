@@ -7,88 +7,96 @@
 
   <!-- Primary SEO -->
   <title>About Us | Ranthambore Ticket Booking — Private Tour & Travel Company</title>
+  
   <meta name="description"
     content="Ranthambore Ticket Booking is a private travel company offering safari ticket booking, hotel booking, tour groups & family trip packages for Ranthambore National Park. We are not a government or Forest Department entity." />
   <meta name="keywords"
     content="Ranthambore Ticket Booking, Ranthambore Safari Company, Ranthambore Hotel Booking, Ranthambore Tour Packages, Private Travel Agency Ranthambore, Family Trip Ranthambore" />
   <meta name="robots" content="index, follow" />
+  <!-- FIXED: was declared twice with conflicting values -->
   <meta name="author" content="Ranthambore Ticket Booking" />
   <link rel="canonical" href="https://ranthamboreticketbooking.com/about.html" />
   <link rel="icon" type="image/png" href="/favicon.png" />
 
-  <!-- Meta Description & Open Graph -->
-  <meta name="description"
-    content="Learn about Ranthambore Safari Booking, official safari permits, jeep and canter booking guidance for Ranthambore National Park." />
+  <!-- Open Graph -->
   <meta property="og:title" content="About Us | Ranthambore Ticket Booking" />
   <meta property="og:description"
     content="A private tour & travel company handling Ranthambore safari tickets, hotels, tour groups and family trips." />
   <meta property="og:type" content="website" />
-  <meta name="author" content="Ranthambore Safari Experts" />
-  <meta name="publisher" content="Ranthambore Ticket Booking" />
-
   <meta property="og:url" content="https://ranthamboreticketbooking.com/about.html" />
   <meta property="og:image" content="https://ranthamboreticketbooking.com/logo.png" />
+  <meta property="og:image:alt" content="Ranthambore Ticket Booking Logo" />
   <meta property="og:site_name" content="Ranthambore Ticket Booking" />
   <meta property="og:locale" content="en_IN" />
+
+  <!-- Twitter Card (was missing on this page) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About Us | Ranthambore Ticket Booking" />
+  <meta name="twitter:description"
+    content="A private tour & travel company handling Ranthambore safari tickets, hotels, tour groups and family trips." />
+  <meta name="twitter:image" content="https://ranthamboreticketbooking.com/logo.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;900&family=Nunito:wght@400;600;700&display=swap"
-    rel="stylesheet">
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <!-- Non-blocking CSS: preload as style, swap to stylesheet on load,
+       same fix already applied on index.html — stops these three from
+       blocking first paint here too. -->
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap"
+      rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  </noscript>
 
   <!-- Site CSS (shared with home page) -->
   <link rel="stylesheet" href="home.css">
 
   <!-- Organization Schema -->
+  <!-- FIXED: this <script> block never had its own closing </script> tag before —
+       a second JSON-LD block was opened right inside it, which made both invalid
+       JSON (Google Search Console would flag this as broken structured data).
+       Each JSON-LD block now has its own separate, properly closed <script> tag. -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Ranthambore Ticket Booking",
-    "url":"https://ranthamboreticketbooking.com",
-    "logo":"https://ranthamboreticketbooking.com/logo.png",
-    "description":"A private tour and travel company providing Ranthambore safari ticket booking, hotel booking, tour group and family trip services. Not affiliated with the Government of Rajasthan or the Forest Department."
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ranthambore Ticket Booking",
+    "url": "https://ranthamboreticketbooking.com",
+    "logo": "https://ranthamboreticketbooking.com/logo.png",
+    "description": "A private tour and travel company providing Ranthambore safari ticket booking, hotel booking, tour group and family trip services. Not affiliated with the Government of Rajasthan or the Forest Department."
   }
+  </script>
 
   <!-- About Page Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "AboutPage",
-  "name": "About Us - Ranthambore Ticket Booking",
-  "url": "https://ranthamboreticketbooking.com/about.html",
-  "description": "Learn about Ranthambore Safari Booking, official safari permits, jeep and canter booking guidance for Ranthambore National Park."
-}
-
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Us - Ranthambore Ticket Booking",
+    "url": "https://ranthamboreticketbooking.com/about.html",
+    "description": "Learn about Ranthambore Ticket Booking, a private travel company offering safari ticket booking, hotel booking and complete Ranthambore trip packages."
+  }
   </script>
 
-  <!-- Google Ads -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18351151254"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'AW-18351151254');
-  </script>
-
-
-  <!-- Google Analytics -->
+  <!-- Google Ads + Analytics: merged into ONE dataLayer/gtag definition (was duplicated) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FRZ6VSR4B"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-6FRZ6VSR4B');
+    gtag('config', 'AW-18351151254');
   </script>
-
-
 </head>
 
 <body>
@@ -161,7 +169,6 @@
       <br>
       <div class="breadcrumb-pills">
         <a href="index.html">Home</a>
-        <!-- <a href="About.html">About Us</a> -->
       </div>
     </div>
   </section>
@@ -192,7 +199,7 @@
     <div class="container">
       <div class="row align-items-center g-5">
         <div class="col-lg-6 reveal-left reveal">
-          <img class="about-story-img" src="about-tiger.jpeg" alt="Ranthambore Tiger Safari" loading="lazy">
+          <img class="about-story-img" src="about-tiger.jpeg" alt="Ranthambore Tiger Safari" loading="lazy" width="600" height="500">
         </div>
         <div class="col-lg-6 about-story-text reveal">
           <div class="section-label">Our Story</div>
@@ -209,19 +216,7 @@
             Every naturalist and driver we work with is local, experienced, and genuinely passionate about the
             park and its wildlife.
           </p>
-          <div class="about-badge-row">
-            <!-- <div class="stat-item">
-              <span class="stat-num">10,000+</span>
-              <div class="stat-label">Travellers Served</div>
-            </div> -->
-            <!-- <div class="stat-item">
-              <span class="stat-num">13+</span>
-              <div class="stat-label">Years in Business</div>
-            </div> -->
-            <!-- <div class="stat-item">
-              <span class="stat-num">4.9★</span>
-              <div class="stat-label">Google Rating</div> -->
-          </div>
+          <div class="about-badge-row"></div>
         </div>
       </div>
     </div>
@@ -332,9 +327,7 @@
           <p class="footer-desc">A private travel company handling Ranthambore Tiger Safari tickets, hotels, tour groups
             and family trips since 2012. Not affiliated with the Government or Forest Department.</p>
           <div class="social-icons">
-            <!-- <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a> -->
             <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <!-- <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a> -->
             <a href="https://wa.me/message/SUCM2DBCG7WPD1" class="social-icon" target="_blank" rel="noopener"><i
                 class="fab fa-whatsapp"></i></a>
           </div>
@@ -342,11 +335,13 @@
         <div class="col-lg-3 col-8">
           <div class="footer-heading">Quick Links</div>
           <ul class="footer-links">
-            <li><a href="home.html#packages">Safari Packages</a></li>
-            <li><a href="home.html#booking">Book Safari</a></li>
-            <li><a href="home.html">About Us</a></li>
-            <li><a href="home.html#gallery">Gallery</a></li>
-            <li><a href="home.html#faq">FAQ</a></li>
+            <!-- FIXED: was pointing to "home.html" which does not exist on this
+                 site (the homepage file is index.html) — these were broken links. -->
+            <li><a href="index.html#packages">Safari Packages</a></li>
+            <li><a href="index.html#booking">Book Safari</a></li>
+            <li><a href="index.html">About Us</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
             <li><a href="privacy-policy.html">Privacy Policy</a></li>
             <li><a href="refund-policy.html">Refund Policy</a></li>
             <li><a href="terms-conditions.html">Terms & Conditions</a></li>
@@ -401,66 +396,13 @@
   </div>
 
   <!-- ========== SCRIPTS ========== -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-
-      /* ===== LOADER ===== */
-      const loader = document.getElementById("loader");
-      window.addEventListener("load", function () {
-        if (loader) {
-          loader.classList.add("hidden");
-          setTimeout(() => loader.remove(), 700);
-        }
-      });
-
-      /* ===== SCROLL REVEAL ===== */
-      const revealEls = document.querySelectorAll(".reveal");
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.15 }
-      );
-      revealEls.forEach((el) => revealObserver.observe(el));
-
-      /* ===== MOBILE MENU TOGGLE ===== */
-      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
-      const navMenu = document.getElementById("navMenu");
-      if (mobileMenuBtn && navMenu) {
-        mobileMenuBtn.addEventListener("click", function () {
-          const isOpen = navMenu.classList.toggle("open");
-          mobileMenuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-          mobileMenuBtn.innerHTML = isOpen
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-        });
-
-        navMenu.querySelectorAll("a").forEach((link) => {
-          link.addEventListener("click", function () {
-            navMenu.classList.remove("open");
-            mobileMenuBtn.setAttribute("aria-expanded", "false");
-            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-          });
-        });
-      }
-
-      /* ===== BACK TO TOP ===== */
-      const backToTop = document.getElementById("backToTop");
-      if (backToTop) {
-        backToTop.addEventListener("click", function () {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        });
-      }
-
-    });
-  </script>
+  <!-- FIXED: was Bootstrap JS with no defer, plus a whole duplicate inline copy
+       of script.js's loader/reveal/menu logic (with the same "wait for window
+       load" loader bug). Now this page just uses the one shared, already-fixed
+       script.js — smaller HTML, and the browser can reuse the cached file from
+       the homepage instead of re-downloading Bootstrap's JS render-blocking. -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
 
 </body>
 

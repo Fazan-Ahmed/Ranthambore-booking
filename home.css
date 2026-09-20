@@ -330,7 +330,7 @@ header.navbar {
     linear-gradient(to bottom,
       rgba(0, 0, 0, 0.55) 0%,
       rgba(13, 32, 16, 0.75) 100%),
-    url("about-tiger.jpeg") center/cover no-repeat;
+    url("about-tiger.webp") center/cover no-repeat;
 
   transform: scale(1.05);
   animation: heroZoom 8s ease-out forwards;

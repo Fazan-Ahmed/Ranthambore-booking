@@ -1,48 +1,52 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-  /* ===== LOADER ===== */
-  const loader = document.getElementById("loader");
+// Global scope loader fix (DOMReady ka wait kiye bina fast remove hoga)
+const loader = document.getElementById("loader");
+if (loader) {
   window.addEventListener("load", function () {
-    if (loader) {
-      loader.classList.add("hidden");
-      setTimeout(() => loader.remove(), 700);
-    }
-  });
+    loader.classList.add("hidden");
+    setTimeout(() => loader.remove(), 400); // 700ms se kam karke 400ms kiya
+  }, { once: true });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
 
   /* ===== SCROLL REVEAL ===== */
   const revealEls = document.querySelectorAll(".reveal");
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.15 }
-  );
-  revealEls.forEach((el) => revealObserver.observe(el));
+  if (revealEls.length > 0) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" } // Optimized threshold
+    );
+    revealEls.forEach((el) => revealObserver.observe(el));
+  }
 
   /* ===== MOBILE MENU TOGGLE ===== */
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");
   const navMenu = document.getElementById("navMenu");
   if (mobileMenuBtn && navMenu) {
+    const menuIcon = mobileMenuBtn.querySelector("i") || mobileMenuBtn;
+
     mobileMenuBtn.addEventListener("click", function () {
       const isOpen = navMenu.classList.toggle("open");
       mobileMenuBtn.setAttribute("aria-expanded", isOpen ? "true" : "false");
-      mobileMenuBtn.innerHTML = isOpen
-        ? '<i class="fas fa-times"></i>'
-        : '<i class="fas fa-bars"></i>';
+      if (menuIcon.tagName === "I") {
+        menuIcon.className = isOpen ? "fas fa-times" : "fas fa-bars";
+      }
     });
 
-    // Close mobile menu after clicking a link
-    navMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", function () {
+    // Delegated event handling (Multiple links listener ki jagah Single Listener)
+    navMenu.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") {
         navMenu.classList.remove("open");
         mobileMenuBtn.setAttribute("aria-expanded", "false");
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-      });
+        if (menuIcon.tagName === "I") menuIcon.className = "fas fa-bars";
+      }
     });
   }
 
@@ -76,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
-      formErrorMsg.classList.remove("visible");
+      if (formErrorMsg) formErrorMsg.classList.remove("visible");
 
       // Browser validation
       if (!form.checkValidity()) {
@@ -90,48 +94,54 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
 
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> SENDING...';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "SENDING...";
+      }
 
       emailjs
         .sendForm("service_zh4ejsa", "template_a8ago8p", form)
         .then(function () {
-          bookingFormWrap.style.display = "none";
-          successMsg.classList.add("visible");
+          if (bookingFormWrap) bookingFormWrap.style.display = "none";
+          if (successMsg) successMsg.classList.add("visible");
           form.reset();
           form.classList.remove("was-validated");
         })
         .catch(function (error) {
           console.error("EmailJS error:", error);
-          formErrorMsg.classList.add("visible");
+          if (formErrorMsg) formErrorMsg.classList.add("visible");
         })
         .finally(function () {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = '<i class="fas fa-calendar-check me-2"></i> CHECK AVAILABILITY';
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "CHECK AVAILABILITY";
+          }
         });
     });
 
-    // Remove invalid state as the user types/selects
-    form.querySelectorAll(".form-control, .form-select").forEach((field) => {
-      field.addEventListener("input", () => field.classList.remove("is-invalid"));
-      field.addEventListener("change", () => field.classList.remove("is-invalid"));
-    });
+    // Form input reset invalid class using delegation
+    form.addEventListener("input", (e) => e.target.classList.remove("is-invalid"));
+    form.addEventListener("change", (e) => e.target.classList.remove("is-invalid"));
   }
 
 });
 
-// User interaction par non-critical JS load karein
+/* ===== DEFERRED SCRIPT LOADING ===== */
+let scriptsLoaded = false;
 function loadDeferredScripts() {
-  const script = document.createElement('script');
-  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX';
-  document.body.appendChild(script);
+  if (scriptsLoaded) return;
+  scriptsLoaded = true;
 
-  // Listener remove karein taaki bar-bar load na ho
-  window.removeEventListener('scroll', loadDeferredScripts);
-  window.removeEventListener('mousemove', loadDeferredScripts);
-  window.removeEventListener('touchstart', loadDeferredScripts);
+  const script = document.createElement("script");
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX";
+  script.async = true;
+  document.head.appendChild(script);
+
+  window.removeEventListener("scroll", loadDeferredScripts);
+  window.removeEventListener("mousemove", loadDeferredScripts);
+  window.removeEventListener("touchstart", loadDeferredScripts);
 }
 
-window.addEventListener('scroll', loadDeferredScripts, { passive: true });
-window.addEventListener('mousemove', loadDeferredScripts, { passive: true });
-window.addEventListener('touchstart', loadDeferredScripts, { passive: true });
+window.addEventListener("scroll", loadDeferredScripts, { passive: true });
+window.addEventListener("mousemove", loadDeferredScripts, { passive: true });
+window.addEventListener("touchstart", loadDeferredScripts, { passive: true });

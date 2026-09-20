@@ -332,8 +332,8 @@ header.navbar {
       rgba(13, 32, 16, 0.75) 100%),
     url("about-tiger.webp") center/cover no-repeat;
 
-  transform: scale(1.05);
-  animation: heroZoom 8s ease-out forwards;
+  /* transform: scale(1.05);
+  animation: heroZoom 8s ease-out forwards; */
 }
 
 /* 4. GPU-friendly Keyframes */

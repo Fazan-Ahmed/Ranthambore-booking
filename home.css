@@ -412,7 +412,7 @@ header.navbar {
 
 .btn-primary-custom {
   background: linear-gradient(135deg, var(--amber), #c47a08);
-  color: var(--white);
+  color: #000000;
   border: none;
   padding: 16px 38px;
   border-radius: 50px;
@@ -420,7 +420,7 @@ header.navbar {
   font-weight: 700;
   text-decoration: none;
   transition: var(--transition);
-  box-shadow: 0 6px 28px rgba(232, 150, 12, 0.45);
+  /* box-shadow: 0 6px 28px rgba(232, 150, 12, 0.45); */
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -429,7 +429,7 @@ header.navbar {
 .btn-primary-custom:hover {
   transform: translateY(-3px);
   box-shadow: 0 12px 36px rgba(232, 150, 12, 0.55);
-  color: var(--white);
+  color: #000000;
 }
 
 .btn-outline-custom {
@@ -1141,13 +1141,13 @@ section {
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--forest-dark);
+  color: #1a1a1a !important;
   background: var(--white);
   padding: 20px 24px;
 }
 
 .accordion-button:not(.collapsed) {
-  color: var(--forest-bright);
+  color: #000000 !important;
   background: rgba(74, 140, 63, 0.05);
   box-shadow: none;
 }

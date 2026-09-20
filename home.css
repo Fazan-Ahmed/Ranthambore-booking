@@ -138,7 +138,7 @@ a {
 }
 
 .contact-top-content {
-  
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -177,7 +177,7 @@ a {
     justify-content: space-between;
     align-items: center;
     gap: 0;
-  
+
 
 
   }
@@ -327,20 +327,23 @@ header.navbar {
   inset: 0;
 
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       rgba(0, 0, 0, 0.55) 0%,
-      rgba(13, 32, 16, 0.75) 100%
-    ),
+      rgba(13, 32, 16, 0.75) 100%),
     url("about-tiger.jpeg") center/cover no-repeat;
 
   transform: scale(1.05);
   animation: heroZoom 8s ease-out forwards;
 }
 
+/* 4. GPU-friendly Keyframes */
 @keyframes heroZoom {
-  to {
-    transform: scale(1);
+  0% {
+    transform: scale(1.05) translateZ(0);
+  }
+
+  100% {
+    transform: scale(1) translateZ(0);
   }
 }
 
@@ -1692,7 +1695,7 @@ footer {
 
 
 .footer-linkss {
-color:  #ff9800;
+  color: #ff9800;
   /* color: #fff; */
   width: 100%;
   display: flex !important;
@@ -1703,7 +1706,7 @@ color:  #ff9800;
   /* margin: 0 0 25px 0; */
   padding: 0;
   box-sizing: border-box;
-   margin-top: 20px;
+  margin-top: 20px;
 }
 
 .footer-linkss a {
@@ -1713,7 +1716,8 @@ color:  #ff9800;
   white-space: nowrap;
   font-size: 14px;
 }
-.footer-linkss a:hover{
+
+.footer-linkss a:hover {
   color: white;
 }
 
@@ -1736,3 +1740,57 @@ color:  #ff9800;
     gap: 10px 5vw;
   }
 }
+
+
+
+/* --- Hero Section Optimization Styles --- */
+#hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background image ko absolute set karke cover stretch karna */
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Overlay image ke upar rahega */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* Saara text aur content overlay ke bhi upar aayega */
+#hero .container,
+.hero-content,
+.hero-scroll {
+  position: relative;
+  z-index: 3;
+}
+
+
+
+/* Logo container styling */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+

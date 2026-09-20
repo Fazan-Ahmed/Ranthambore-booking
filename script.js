@@ -119,3 +119,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+// User interaction par non-critical JS load karein
+function loadDeferredScripts() {
+  const script = document.createElement('script');
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX';
+  document.body.appendChild(script);
+
+  // Listener remove karein taaki bar-bar load na ho
+  window.removeEventListener('scroll', loadDeferredScripts);
+  window.removeEventListener('mousemove', loadDeferredScripts);
+  window.removeEventListener('touchstart', loadDeferredScripts);
+}
+
+window.addEventListener('scroll', loadDeferredScripts, { passive: true });
+window.addEventListener('mousemove', loadDeferredScripts, { passive: true });
+window.addEventListener('touchstart', loadDeferredScripts, { passive: true });

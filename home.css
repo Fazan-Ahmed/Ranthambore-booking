@@ -171,15 +171,12 @@ a {
 
 @media (max-width: 768px) {
   .contact-top-content {
-    display: row;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
     gap: 0;
-
-
-
   }
 }
 

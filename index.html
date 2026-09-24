@@ -30,7 +30,6 @@
 
   <meta name="author" content="Ranthambore Safari Experts" />
   <meta name="publisher" content="Ranthambore Ticket Booking" />
-  <!-- FIXED: was "og-banner.webp2" (invalid/broken extension) -->
   <meta property="og:image" content="https://ranthamboreticketbooking.com/og-banner.webp" />
   <meta name="twitter:image" content="https://ranthamboreticketbooking.com/og-banner.webp" />
 
@@ -50,24 +49,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Non-blocking CSS loading: preload as style, swap to stylesheet on load.
-       This stops Bootstrap / Font Awesome / Google Fonts from blocking first paint. -->
-  <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-    onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap"
-      rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  </noscript>
+  <!-- FIXED: CSS ab directly <link rel="stylesheet"> se load ho raha hai.
+       Pehle "preload + onload='this.rel=stylesheet'" trick use ho rahi thi,
+       jisme agar onload kabhi fire na ho (slow network / browser quirk),
+       to Bootstrap ka CSS kabhi apply hi nahi hota tha — isi wajah se
+       layout kabhi-kabhi bigad jaata tha (jaisa aapki 2nd image mein tha). -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Site CSS (kept render-blocking on purpose: it's small and needed for layout) -->
+  <!-- Site CSS -->
   <link rel="stylesheet" href="home.css">
 
   <script type="application/ld+json">
@@ -121,7 +113,7 @@
   }
   </script>
 
-  <!-- Google Ads + Analytics: merged into ONE dataLayer/gtag definition (was duplicated) -->
+  <!-- Google Ads + Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-6FRZ6VSR4B"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -169,7 +161,7 @@
 
   <!-- ========== HEADER / NAVBAR ========== -->
   <header class="navbar" id="mainNav">
-     <div class="container navbar-inner">
+    <div class="container navbar-inner">
 
       <a href="index.html" class="logo">
         <div class="logo-tiger">🐯</div>
@@ -204,7 +196,7 @@
     <img src="about-tiger.webp" alt="Royal Bengal Tiger in Ranthambore National Park" class="hero-bg-img"
       fetchpriority="high" decoding="async" />
     <div class="hero-overlay"></div>
-    
+
     <div class="container">
       <div class="hero-content">
         <div class="hero-badge">🐯 India's Finest Tiger Reserve</div>

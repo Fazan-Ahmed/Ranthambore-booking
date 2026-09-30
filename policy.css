@@ -218,7 +218,7 @@ footer a:hover{
     justify-content:center;
     align-items:center;
     gap:15px;
-    margin:35px 0;
+    margin:30px 0;
     flex-wrap:wrap;
 }
 
@@ -252,4 +252,32 @@ footer a:hover{
 .btn-outline-custom:hover{
     background:#1f4d2e;
     color:#fff;
+}
+
+
+
+.footer-linkss {
+  color: #ff9800;
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px 4vw;
+  padding: 0;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.footer-linkss a {
+  display: inline-block;
+  color: inherit;
+  text-decoration: underline;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.footer-linkss a:hover {
+  color: white;
+  text-decoration: underline;
 }

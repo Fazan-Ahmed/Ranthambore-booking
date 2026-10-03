@@ -22,7 +22,7 @@ body{
     color:var(--text);
     line-height:1.8;
 }  */
-  
+
 :root {
   --forest-dark: #0b1a0f;
   --forest-deep: #16311c;
@@ -83,6 +83,7 @@ body {
     width:90%;
     max-width:1200px;
     margin:auto;
+    
 }
 
 .top-links{
@@ -94,12 +95,14 @@ body {
 .top-links a{
     text-decoration:none;
     color:#fff;
+    
     font-weight:600;
     transition:.3s;
 }
 
 .top-links a:hover{
     color:var(--accent);
+  
 }
 
 .guest-blog-btn{

@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .finally(function () {
           if (submitBtn) {
             submitBtn.disabled = false;
-            submitBtn.textContent = "CHECK AVAILABILITY";
+            submitBtn.textContent = "REQUEST AVAILABILITY";
           }
         });
     });

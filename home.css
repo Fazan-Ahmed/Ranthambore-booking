@@ -1753,7 +1753,7 @@ footer {
 }
 
 .card-heading .icon {
-  width: 48px;
+  width: 50px;
   height: 48px;
   border-radius: 50%;
   background: rgba(74, 140, 63, 0.12);
@@ -1829,7 +1829,7 @@ footer {
   background: #25d366;
 }
 
-
+/* another */
 
 @media (max-width: 768px) {
   .contact-top-bar {

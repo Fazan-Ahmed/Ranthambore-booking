@@ -10,7 +10,7 @@
     content="Contact Ranthambore Ticket Booking for Ranthambore safari booking assistance. Call, WhatsApp or email us. Independent private service, not affiliated with the Forest Department." />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Ranthambore Ticket Booking" />
-  <link rel="canonical" href="https://www.ranthamboreticketbooking.com/contact-us.html" />
+  <link rel="canonical" href="https://www.ranthamboreticketbooking.com/contact.html" />
 
   <!-- Favicon & App Icons -->
   <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
@@ -22,16 +22,17 @@
   <link rel="icon" type="image/png" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
   <link rel="manifest" href="favicon_io/site.webmanifest">
 
-
+  <!-- Open Graph -->
   <meta property="og:title" content="Contact Us | Ranthambore Ticket Booking" />
   <meta property="og:description"
     content="Call, WhatsApp or email us for Ranthambore safari booking assistance. Independent private service." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.ranthamboreticketbooking.com/contact-us.html" />
+  <meta property="og:url" content="https://www.ranthamboreticketbooking.com/contact.html" />
   <meta property="og:image" content="https://www.ranthamboreticketbooking.com/og-banner.webp" />
   <meta property="og:site_name" content="Ranthambore Ticket Booking" />
   <meta property="og:locale" content="en_IN" />
 
+  <!-- Fonts & Libraries -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
@@ -39,15 +40,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Site CSS (same file as all other pages) -->
-  <link rel="stylesheet" href="home.css">
+  <!-- Site CSS (same file as all other pages). ?v=2 = cache bust, badhao jab CSS change karo -->
+  <link rel="stylesheet" href="home.css?v=2">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     "name": "Contact Ranthambore Ticket Booking",
-    "url": "https://www.ranthamboreticketbooking.com/contact-us.html"
+    "url": "https://www.ranthamboreticketbooking.com/contact.html"
   }
   </script>
 
@@ -132,7 +133,9 @@
   <!-- ========== CONTACT CARDS ========== -->
   <section id="contact-cards">
     <div class="container">
-      <section class="contact-grid" aria-label="Business and contact details">
+
+      <!-- FIXED: nested <section> replaced with <div> (global "section" padding no longer applies) -->
+      <div class="contact-grid" role="region" aria-label="Business and contact details">
         <article class="contact-card">
           <div class="card-heading">
             <span class="icon" aria-hidden="true">☎</span>
@@ -146,10 +149,12 @@
             <span class="detail-label">Business Name</span>
             <div class="detail-value">Ranthambore Ticket Booking</div>
           </div>
+
           <div class="detail">
             <span class="detail-label">Owner / Contact Person</span>
             <div class="detail-value">Farhan Ahamad</div>
           </div>
+
           <div class="detail">
             <span class="detail-label">Phone Number 1</span>
             <div class="detail-value"><a href="tel:+917737364741">+91 7737364741</a></div>
@@ -159,6 +164,7 @@
                 rel="noopener noreferrer">WhatsApp</a>
             </div>
           </div>
+
           <div class="detail">
             <span class="detail-label">Phone Number 2</span>
             <div class="detail-value"><a href="tel:+918619152322">+91 8619152322</a></div>
@@ -168,32 +174,26 @@
                 rel="noopener noreferrer">WhatsApp</a>
             </div>
           </div>
+
           <div class="detail">
             <span class="detail-label">Email Address</span>
-            <div class="detail-value"><a
-                href="mailto:ranthamboreticketbooking@gmail.com">ranthamboreticketbooking@gmail.com</a></div>
+            <div class="detail-value">
+              <a href="mailto:ranthamboreticketbooking@gmail.com">ranthamboreticketbooking@gmail.com</a>
+            </div>
           </div>
         </article>
-      </section>
+      </div>
 
-      <a href="index.html" class="back-home" style=" display: inline-block;
-  margin-top: 26px;
-  background: linear-gradient(135deg, var(--forest-bright), var(--forest-mid));
-  color: var(--white) !important;
-  padding: 12px 28px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: 0.92rem;
-  text-decoration: none;
-  transition: var(--transition);
- ">
+      <!-- Inline style rakha hai taaki home.css me .back-home na ho tab bhi button sahi dikhe -->
+      <a href="index.html" class="back-home"
+        style="display:inline-block;margin-top:26px;background:linear-gradient(135deg,var(--forest-bright),var(--forest-mid));color:var(--white);padding:12px 28px;border-radius:50px;font-weight:700;font-size:0.92rem;text-decoration:none;">
         ← Back to Home
       </a>
-    </div>
 
+    </div>
   </section>
 
-
+  <!-- ========== FOOTER ========== -->
   <footer id="contact">
     <div class="container">
       <div class="row g-4">

@@ -1,17 +1,16 @@
-
-/* ============ CSS VARIABLES ============ */
+    /* ============ CSS VARIABLES ============ */
 :root {
-  /* Forest greens — deep, richer, better contrast for dark sections */
+  /* Forest greens */
   --forest-dark: #0b1a0f;
   --forest-deep: #16311c;
   --forest-mid: #2f6b34;
   --forest-bright: #4caf50;
 
-  /* Amber/gold — warm accent, more saturated & premium */
+  /* Amber/gold */
   --amber: #d97706;
   --amber-light: #f5a623;
 
-  /* Earth tones — for secondary accents (wood, sand, textures) */
+  /* Earth tones */
   --earth: #7c4a2d;
   --earth-light: #c98a5e;
 
@@ -21,11 +20,10 @@
   --text-dark: #14140f;
   --text-muted: #6b6b63;
 
-  /* Semantic colors — useful for form validation, alerts, badges */
+  /* Semantic colors */
   --success: #2f9e44;
   --danger: #e03131;
   /* --warning: #f08c00; */
-  background: #f5a623;
   --info: #1c7ed6;
 
   /* Effects */
@@ -42,22 +40,25 @@
 }
 
 html {
-
-  
-
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   width: 100%;
-  
 }
 
 body {
   font-family: 'Nunito', sans-serif;
   color: var(--text-dark);
   background: var(--cream);
-  overflow-x: hidden;
   max-width: 100%;
+  overflow-x: hidden; /* purane phones ke liye fallback */
 }
+
+@supports (overflow: clip) {
+  body {
+    overflow-x: clip; /* sticky ko nahi todta */
+  }
+}
+
 
 h1,
 h2,
@@ -142,13 +143,11 @@ a {
 /* ============ CONTACT TOP BAR ============ */
 .contact-top-bar {
   background: #f5a623;
-  color: #fff;
   color: #000000;
   padding: 6px 15px;
 }
 
 .contact-top-content {
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -168,7 +167,6 @@ a {
 
 .contact-item a {
   color: #000000;
-  /* color: #fff; */
   text-decoration: none;
 }
 
@@ -182,21 +180,19 @@ a {
 
 @media (max-width: 768px) {
   .contact-top-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
     gap: 0;
   }
 }
 
 /* ============ HEADER / NAVBAR ============ */
 header.navbar {
+  /* position: sticky;
+  top: 0;
+  z-index: 1000; */
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   z-index: 1000;
-  /* background: rgba(13, 32, 16, 0.97); */
   background: #000000;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.07);
@@ -264,7 +260,6 @@ header.navbar {
 
 .nav-cta {
   background: linear-gradient(135deg, var(--amber), #d4780a);
-  /* color: var(--white) !important; */
   color: #000000 !important;
   border-radius: 30px;
   padding: 10px 22px;
@@ -332,7 +327,6 @@ header.navbar {
   justify-content: center;
 }
 
-
 .hero-bg-img {
   position: absolute;
   top: 0;
@@ -355,8 +349,7 @@ header.navbar {
 }
 
 #hero .container,
-.hero-content,
-.hero-scroll {
+.hero-content {
   position: relative;
   z-index: 3;
 }
@@ -558,25 +551,33 @@ section {
   margin: 18px auto 0;
 }
 
-/* ============ PACKAGES ============ */
-#packages {
+/* ===== Shared dark sections (Packages, Instructions, Services) ===== */
+#packages,
+#instructions,
+#services {
   background: var(--forest-dark);
 }
 
-#packages .section-title {
+#packages .section-title,
+#instructions .section-title,
+#services .section-title {
   color: var(--white);
 }
 
-#packages .section-sub {
+#packages .section-sub,
+#services .section-sub {
   color: rgba(255, 255, 255, 0.65);
 }
 
-#packages .section-label {
+#packages .section-label,
+#instructions .section-label,
+#services .section-label {
   background: rgba(232, 150, 12, 0.15);
   color: var(--amber-light);
   border-color: rgba(232, 150, 12, 0.3);
 }
 
+/* ============ PACKAGES ============ */
 .pkg-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1018,20 +1019,6 @@ section {
 }
 
 /* ============ INSTRUCTIONS ============ */
-#instructions {
-  background: var(--forest-dark);
-}
-
-#instructions .section-title {
-  color: var(--white);
-}
-
-#instructions .section-label {
-  background: rgba(232, 150, 12, 0.15);
-  color: var(--amber-light);
-  border-color: rgba(232, 150, 12, 0.3);
-}
-
 .instr-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1291,7 +1278,6 @@ section {
 }
 
 /* ============ FOOTER ============ */
-
 footer {
   background: var(--forest-dark);
   color: rgba(255, 255, 255, 0.6);
@@ -1369,7 +1355,6 @@ footer {
   flex-direction: row !important;
   align-items: center;
   gap: 12px;
-  /* margin-top: 20px; */
 }
 
 .social-icon {
@@ -1439,16 +1424,10 @@ footer {
 }
 
 @media (max-width: 576px) {
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .form-side {
     display: none;
   }
 }
-
-
 
 /* ============ ABOUT PAGE ============ */
 .about-hero {
@@ -1464,11 +1443,7 @@ footer {
 .about-hero-bg {
   position: absolute;
   inset: 0;
-  /* FIXED: was hotlinking an image from images.unsplash.com. Hotlinking an
-     external site's image means your page's load time depends on a server
-     you don't control (and it can break or get rate-limited any time).
-     Point this at a file hosted on your own domain instead — for example
-     reuse "about-tiger.webp" that's already used on the homepage hero. */
+  /* Self-hosted image (no external hotlinking) */
   background:
     linear-gradient(to bottom, rgba(13, 32, 16, 0.7) 0%, rgba(13, 32, 16, 0.9) 100%),
     url('about-tiger.webp') center/cover no-repeat;
@@ -1591,25 +1566,7 @@ footer {
   color: var(--text-muted);
 }
 
-/* Services offered */
-#services {
-  background: var(--forest-dark);
-}
-
-#services .section-title {
-  color: var(--white);
-}
-
-#services .section-sub {
-  color: rgba(255, 255, 255, 0.65);
-}
-
-#services .section-label {
-  background: rgba(232, 150, 12, 0.15);
-  color: var(--amber-light);
-  border-color: rgba(232, 150, 12, 0.3);
-}
-
+/* Services offered (dark bg/title/sub/label handled in shared dark sections above) */
 .service-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1708,7 +1665,7 @@ footer {
   flex-wrap: wrap;
 }
 
-
+/* ============ FOOTER LINKS ROW ============ */
 .footer-linkss {
   color: #ff9800;
   width: 100%;
@@ -1742,8 +1699,6 @@ footer {
   }
 }
 
-
-
 /* Mobile */
 @media (max-width: 480px) {
   .footer-linkss {
@@ -1751,240 +1706,148 @@ footer {
   }
 }
 
-/* About Ranthambore Ticket Booking */
-
+/* ============ ABOUT RANTHAMBORE TICKET BOOKING ============ */
 .disclaimer-content p {
-    margin: 0 0 15px;
-    line-height: 1.7;
+  margin: 0 0 15px;
+  line-height: 1.7;
 }
 
 .disclaimer-content h4 {
-    margin: 28px 0 12px;
+  margin: 28px 0 12px;
 }
 
 .disclaimer-content ul {
-    margin: 10px 0 20px;
-    padding-left: 25px;
+  margin: 10px 0 20px;
+  padding-left: 25px;
 }
 
 .disclaimer-content li {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
+}
+
+/* ============ CONTACT PAGE ============ */
+#contact-cards {
+  background: var(--white);
+  padding: 10px 0 30px;
+}
+
+.contact-grid {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  text-align: left;
+  padding: 32px 28px;
+  background: var(--white);
+  border: 1px solid #eee;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.card-heading .icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(74, 140, 63, 0.12);
+  color: var(--forest-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.card-heading h2 {
+  color: var(--forest-dark);
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.card-heading p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.detail {
+  padding: 14px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.detail-label {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+.detail-value {
+  color: var(--forest-dark);
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.detail-value a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.detail-value a:hover {
+  color: var(--forest-mid);
+  text-decoration: underline;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.actions .button {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 50px;
+  background: var(--forest-mid);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.actions .button.secondary {
+  background: #25d366;
 }
 
 
 
+@media (max-width: 768px) {
+  .contact-top-bar {
+    padding: 6px 10px;
+  }
 
- /* Contact page only */
-#contact-cards {
-      background: var(--white);
+  .contact-top-content {
+    flex-wrap: wrap;            /* nowrap hata ke wrap */
+    justify-content: center;
+    gap: 4px 14px;
+  }
 
-      padding: 10px 0 30px;
-    }
+  .contact-item {
+    font-size: 12px;
+    gap: 5px;
+  }
 
-    .contact-grid {
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .contact-card {
-      text-align: left;
-      padding: 32px 28px;
-      background: var(--white);
-      border: 1px solid #eee;
-      border-radius: var(--radius);
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
-    }
-
-    .card-heading {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 24px;
-    }
-
-    .card-heading .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(74, 140, 63, 0.12);
-      color: var(--forest-mid);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
-
-    .card-heading h2 {
-      color: var(--forest-dark);
-      font-size: 1.3rem;
-      margin: 0;
-    }
-
-    .card-heading p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin: 0;
-    }
-
-    .detail {
-      padding: 14px 0;
-      border-top: 1px solid #f0f0f0;
-    }
-
-    .detail-label {
-      display: block;
-      color: var(--text-muted);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 4px;
-    }
-
-    .detail-value {
-      color: var(--forest-dark);
-      font-weight: 700;
-      word-break: break-word;
-    }
-
-    .detail-value a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .detail-value a:hover {
-      color: var(--forest-mid);
-      text-decoration: underline;
-    }
-
-    .actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .actions .button {
-      display: inline-block;
-      padding: 8px 18px;
-      border-radius: 50px;
-      background: var(--forest-mid);
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-    .actions .button.secondary {
-      background: #25d366;
-    }
-  
-/* Privacy,Refund,terms */
-
-    .policy-section {
-      background: var(--cream);
-      padding: 60px 0 70px;
-    }
-
-    .policy-card {
-      background: var(--white);
-      border-radius: 24px;
-      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
-      padding: 50px 48px;
-    }
-
-    .policy-card h2 {
-      font-size: 1.35rem;
-      color: var(--forest-deep);
-      margin: 34px 0 12px;
-    }
-
-    .policy-card h1 {
-      font-size: clamp(1.9rem, 4vw, 2.6rem);
-      color: var(--forest-dark);
-      margin-bottom: 8px;
-    }
-
-    .policy-card .last-updated {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 30px;
-      padding-bottom: 20px;
-      border-bottom: 3px solid transparent;
-      border-image: linear-gradient(90deg, var(--amber), var(--forest-bright)) 1;
-    }
-
-    .policy-card p,
-    .policy-card li {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.8;
-    }
-
-    .policy-card p {
-      margin-bottom: 14px;
-    }
-
-    .policy-card ul {
-      margin: 10px 0 20px;
-      padding-left: 24px;
-    }
-
-    .policy-card li {
-      margin-bottom: 8px;
-    }
-
-    .policy-card strong {
-      color: var(--text-dark);
-    }
-
-    .policy-card a {
-      color: var(--forest-mid);
-      font-weight: 700;
-    }
-
-    .policy-card a:hover {
-      color: var(--amber);
-    }
-
-    .contact-box {
-      background: rgba(232, 150, 12, 0.08);
-      border: 1px solid rgba(232, 150, 12, 0.35);
-      border-radius: var(--radius);
-      padding: 24px 28px;
-      margin: 20px 0 10px;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.9;
-    }
-
-    .contact-box h3 {
-      font-size: 1.15rem;
-      color: var(--forest-dark);
-      margin-bottom: 10px;
-    }
-
-    .back-home {
-      display: inline-block;
-      margin-top: 26px;
-      background: linear-gradient(135deg, var(--forest-bright), var(--forest-mid));
-      color: var(--white) !important;
-      padding: 12px 28px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 0.92rem;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .back-home:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(74, 140, 63, 0.45);
-      color: var(--white) !important;
-    }
-
-    @media (max-width: 576px) {
-      .policy-card {
-        padding: 32px 22px;
-      }
-    }
+  .contact-item i {
+    font-size: 11px;
+  }
+}

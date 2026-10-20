@@ -1770,3 +1770,221 @@ footer {
 .disclaimer-content li {
     margin-bottom: 8px;
 }
+
+
+
+
+ /* Contact page only */
+#contact-cards {
+      background: var(--white);
+
+      padding: 10px 0 30px;
+    }
+
+    .contact-grid {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      text-align: left;
+      padding: 32px 28px;
+      background: var(--white);
+      border: 1px solid #eee;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06);
+    }
+
+    .card-heading {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .card-heading .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(74, 140, 63, 0.12);
+      color: var(--forest-mid);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .card-heading h2 {
+      color: var(--forest-dark);
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .card-heading p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    .detail {
+      padding: 14px 0;
+      border-top: 1px solid #f0f0f0;
+    }
+
+    .detail-label {
+      display: block;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+
+    .detail-value {
+      color: var(--forest-dark);
+      font-weight: 700;
+      word-break: break-word;
+    }
+
+    .detail-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .detail-value a:hover {
+      color: var(--forest-mid);
+      text-decoration: underline;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .actions .button {
+      display: inline-block;
+      padding: 8px 18px;
+      border-radius: 50px;
+      background: var(--forest-mid);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .actions .button.secondary {
+      background: #25d366;
+    }
+  
+/* Privacy,Refund,terms */
+
+    .policy-section {
+      background: var(--cream);
+      padding: 60px 0 70px;
+    }
+
+    .policy-card {
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, 0.1);
+      padding: 50px 48px;
+    }
+
+    .policy-card h2 {
+      font-size: 1.35rem;
+      color: var(--forest-deep);
+      margin: 34px 0 12px;
+    }
+
+    .policy-card h1 {
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      color: var(--forest-dark);
+      margin-bottom: 8px;
+    }
+
+    .policy-card .last-updated {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--amber), var(--forest-bright)) 1;
+    }
+
+    .policy-card p,
+    .policy-card li {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.8;
+    }
+
+    .policy-card p {
+      margin-bottom: 14px;
+    }
+
+    .policy-card ul {
+      margin: 10px 0 20px;
+      padding-left: 24px;
+    }
+
+    .policy-card li {
+      margin-bottom: 8px;
+    }
+
+    .policy-card strong {
+      color: var(--text-dark);
+    }
+
+    .policy-card a {
+      color: var(--forest-mid);
+      font-weight: 700;
+    }
+
+    .policy-card a:hover {
+      color: var(--amber);
+    }
+
+    .contact-box {
+      background: rgba(232, 150, 12, 0.08);
+      border: 1px solid rgba(232, 150, 12, 0.35);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin: 20px 0 10px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.9;
+    }
+
+    .contact-box h3 {
+      font-size: 1.15rem;
+      color: var(--forest-dark);
+      margin-bottom: 10px;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 26px;
+      background: linear-gradient(135deg, var(--forest-bright), var(--forest-mid));
+      color: var(--white) !important;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .back-home:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(74, 140, 63, 0.45);
+      color: var(--white) !important;
+    }
+
+    @media (max-width: 576px) {
+      .policy-card {
+        padding: 32px 22px;
+      }
+    }

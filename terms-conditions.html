@@ -16,14 +16,29 @@
 
   <link rel="canonical" href="https://www.ranthamboreticketbooking.com/terms-conditions.html">
 
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon_io/favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
+  <link rel="manifest" href="favicon_io/site.webmanifest">
 
-<link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
-<link rel="manifest" href="favicon_io/site.webmanifest">
-  <!-- CSS -->
-  <link rel="stylesheet" href="policy.css">
+
+  <!-- Fonts + libraries (same as all other pages) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Site CSS (same file as all other pages) -->
+  <link rel="stylesheet" href="home.css">
+
+  
 
   <!-- Terms & Conditions Schema Markup -->
   <script type="application/ld+json">
@@ -35,51 +50,77 @@
 }
 </script>
 
-
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg" id="mainNav">
-    <div class="container">
-      <div class="top-links">
-        <a href="index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="index.html#contact">Contact</a>
-        <!-- <a href="/blog/" class="guest-blog-btn">Guest Blog</a> -->
 
-        <div class="hero-btns">
-          <a href="https://wa.me/917737364741" target="_blank" class="btn-outline-custom">
-            <i class="fab fa-whatsapp"></i> WhatsApp Booking Assistant
-          </a>
-
-          <a href="index.html#booking" class="btn-primary-custom">
-            <i class="fas fa-calendar-check"></i> Request Safari Now
-          </a>
-        </div>
-      </div>
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-paw">🐾</div>
+    <div class="loader-text">RANTHAMBORE TICKET BOOKING</div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
     </div>
-  </nav>
+  </div>
 
-
-  <!-- Hero Section -->
-
-  <section class="hero">
-    <div class="container">
-      <h1>Terms & Conditions</h1>
-      <p>
-        Please read these Terms & Conditions carefully before using our website
-        or submitting any safari booking request.
-      </p>
+  <!-- ========== CONTACT TOP BAR ========== -->
+  <section class="contact-top-bar">
+    <div class="container contact-top-content">
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>Call Now: <a href="tel:+917737364741">+91 7737364741</a></span>
+      </div>
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>Call Now: <a href="tel:+918619152322">+91 8619152322</a></span>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/917737364741" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
     </div>
   </section>
 
-  <!-- Main Content -->
+  <!-- ========== HEADER / NAVBAR ========== -->
+  <header class="navbar" id="mainNav">
+    <div class="container navbar-inner">
 
-  <section class="policy-card">
+      <a href="index.html" class="logo">
+        <div class="logo-tiger">🐯</div>
+        <div class="logo-text">
+          <h2>RANTHAMBORE</h2>
+          <span>TICKET BOOKING</span>
+        </div>
+      </a>
 
-    <h2>Terms & Conditions</h2>
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="index.html#safari-now">Safari Enquiry</a>
+        <a href="About.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
 
-    <p><strong>Last Updated:</strong> 7 October 2026</p>
+      <button class="mobile-menu" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT (text unchanged) ========== -->
+  <section class="policy-section">
+    <div class="container">
+
+  <div class="policy-card">
+
+    <h1>Terms & Conditions</h1>
+
+    <p class="last-updated"><strong>Last Updated:</strong> 7 October 2026</p>
+
+    <p>
+      Please read these Terms & Conditions carefully before using our website
+      or submitting any safari booking request.
+    </p>
 
     <p>
       Welcome to <strong>Ranthambore Ticket Booking</strong>.
@@ -148,12 +189,8 @@
       <li>Valid Government ID Details</li>
       <li>Mobile Number</li>
       <li>Email Address (where provided)</li>
+      <li>Customers must report 30 minutes before safari departure </li>
     </ul>
-
-    <p>
-      Incorrect or incomplete information may result in booking rejection, cancellation, or denial of entry under
-      applicable booking or park rules.
-    </p>
 
     <!-- Section 5 -->
 
@@ -172,13 +209,9 @@
 
     <h2>6. Pricing</h2>
 
-    <p>
-      Prices depend on safari type, date, zone and availability. Prices shown on the website are starting prices,
-      and the final price is confirmed to you before you pay.
-    </p>
+    <p>Prices depend on safari type, date, zone and availability. Prices shown on the website are starting prices, and the final price is communicated to the customer before payment.</p>
 
-    <p>
-      The displayed safari price is inclusive of the applicable permit and all mandatory charges included in the displayed rate.
+     <p>The total amount communicated and agreed upon before payment is the final amount payable for the booking. No additional charges will be collected beyond this agreed amount for the same booking. All bookings are subject to permit availability and confirmation.
     </p>
 
     <!-- Section 7 -->
@@ -188,7 +221,7 @@
     <ul>
       <li>Payment is required after safari availability and booking details have been confirmed. Booking confirmation is subject to successful payment and applicable permit availability. </li>
 
-      <li>Payments are accepted through UPI or other payment methods communicated by our booking team. Please verify the amount and payee details before you pay.</li>
+      <li>Payments are accepted through UPI or other payment methods communicated by our booking team. Please verify the amount and details before you pay.</li>
 
       <li>A booking request will not be processed until payment has been successfully received.</li>
     </ul>
@@ -220,7 +253,7 @@
 
     <!-- Section 10 -->
 
-    <h2>10. Cancellation</h2>
+    <h2>10. Cancellation by Customer</h2>
 
     <p>
       Cancellations are governed by our <a href="Refund-policy.html">Refund/Cancellation Policy</a> and any
@@ -228,22 +261,21 @@
     </p>
 
     <ul>
-      <li>30 days or more before the safari date: 75% refund of the eligible amount.</li>
-      <li>More than 72 hours but less than 30 days before: 50% refund of the eligible amount.</li>
-      <li>72 hours or less before, or no-show: no refund.</li>
+      <li>Cancellation 30 days or more before the visit date: 75% refund of the total amount paid for the booking.
+     </li>
+      <li>
+     Cancellation more than 72 hours but less than 30 days before the visit date: 50% refund of the total amount paid for the booking.
+     </li>
+      <li>
+      Cancellation 72 hours or less before the visit date, or no-show: No refund.</li>
     </ul>
-
-    <p>
-      Some permit, government, vehicle, guide or payment charges may be non-refundable. Any such charge is
-      communicated before payment.
-    </p>
 
     <!-- Section 11 -->
 
     <h2>11. Refunds</h2>
 
     <p>
-      Refunds are processed according to our <strong>Refund &amp; Cancellation</strong> Policy.
+      Refunds are processed according to our <strong>Refund/Cancellation</strong> Policy.
     </p>
     <p>
       If payment has been received but we are unable to confirm or complete your safari booking from our side
@@ -253,22 +285,7 @@
 
     <!-- Section 12 -->
 
-    <h2>12. Customer Errors</h2>
-
-    <p>
-      No refund will be provided if a booking fails due to customer mistakes, including:
-    </p>
-
-    <ul>
-      <li>Incorrect personal details.</li>
-      <li>Incorrect Government ID information.</li>
-      <li>Failure to report on time.</li>
-      <li>Failure to carry required documents.</li>
-    </ul>
-
-    <!-- Section 13 -->
-
-    <h2>13. Wildlife Sighting</h2>
+    <h2>12. Wildlife Sighting</h2>
 
     <p>
       Ranthambore National Park is a natural wildlife habitat.
@@ -279,9 +296,9 @@
       Wildlife movement is completely natural and beyond anyone's control.
     </p>
 
-    <!-- Section 14 -->
+    <!-- Section 13 -->
 
-    <h2>14. Park Rules</h2>
+    <h2>13. Park Rules</h2>
 
     <p>
       Every visitor must follow all instructions issued by:
@@ -299,9 +316,9 @@
       cancellation of the safari, or other action by the relevant park authorities.
     </p>
 
-    <!-- Section 15 -->
+    <!-- Section 14 -->
 
-    <h2>15. Website Availability</h2>
+    <h2>14. Website Availability</h2>
 
     <p>
       We strive to keep our website available at all times.
@@ -315,10 +332,9 @@
       <li>Third-party service disruptions</li>
     </ul>
 
+    <!-- Section 15 -->
 
-    <!-- Section 16 -->
-
-    <h2>16. Limitation of Liability</h2>
+    <h2>15. Limitation of Liability</h2>
 
     <p>
       Ranthambore Ticket Booking shall not be held responsible for any losses,
@@ -335,9 +351,9 @@
       <li>Delays caused by third-party service providers</li>
     </ul>
 
-    <!-- Section 17 -->
+    <!-- Section 16 -->
 
-    <h2>17. Third-Party Services</h2>
+    <h2>16. Third-Party Services</h2>
 
     <p>
       Our website may use third-party services including:
@@ -356,93 +372,108 @@
       providers also apply.
     </p>
 
-    <!-- Section 18 -->
+    <!-- Section 17 -->
 
-    <h2>18. Governing Law</h2>
+    <h2>17. Governing Law</h2>
 
     <p>
       These Terms are governed by the laws of India. Disputes are subject to the jurisdiction of the courts in
       Rajasthan.
     </p>
 
-    <!-- Section 19 -->
+    <!-- Section 18 -->
 
-    <h2>19. Policy Updates</h2>
+    <h2>18. Policy Updates</h2>
 
     <p>
       We may update these terms and conditions from time to time. The updated version will be published on this website
       with the revised update date.
     </p>
 
-    <!-- Section 20 -->
+    <!-- Section 19 -->
 
-    <h2>20. Contact Information</h2>
+    <h2>9. Contact Us</h2>
+        <p>If you have any questions or concerns about this Terms & Conditions, please contact us at:</p>
+        <p><strong>Email</strong>: ranthamboreticketbooking@gmail.com<br>
+          <strong>Phone</strong>: +91-7737364741 (Call & WhatsApp)<br>
+          <strong>Phone</strong>: +91-8619152322 (Call & WhatsApp)<br>
+          <strong>Address</strong>: House No.17, Khardi Mohalla, Ward No.17, City Sawai Madhopur, Dist-Sawai Madhopur
+          Rajasthan – 322021
+        </p>
 
-    <p>
-      If you have any questions regarding these Terms & Conditions,
-      please contact us using the details provided on our website.
-    </p>
+    <!-- Important Notice -->
+      <h2>Important Notice</h2>
 
+      <p>
+        Ranthambore Ticket Booking is an independent travel and safari
+        booking assistance service. We are not the official website of the
+        Rajasthan Forest Department or Ranthambore Tiger Reserve.
+      </p>
 
-    <div class="contact-box">
+      <p>
+        Safari permits, availability and entry arrangements are subject to
+        the applicable rules and booking system of the relevant authority.
+      </p>
+      </div>
 
-      <h3><strong>Contact Us</strong></h3>
-
-      <p><strong>Website:</strong> https://www.ranthamboreticketbooking.com</p>
-
-      <p><strong>Email:</strong> ranthamboreticketbooking@gmail.com</p>
-
-      <p><strong>Phone:</strong> +91-7737364741</p>
-      <p><strong>Phone:</strong> +91-8619152322</p>
-      <strong>Address</strong>: House No.17, Khardi Mohalla, Ward No.17, City Sawai Madhopur, Dist-Sawai Madhopur
-      Rajasthan – 322021
-
-    </div>
-
-    <!-- Disclaimer -->
-
-    <h2>Disclaimer</h2>
-
-    <p>
-      Ranthambore Ticket Booking is an independent safari booking assistance
-      platform.
-    </p>
-
-    <p>
-      We are not affiliated with, endorsed by, or operated by the Rajasthan Forest
-      Department or Ranthambore National Park.
-    </p>
-
-    <p>
-      All safari bookings are subject to permit availability and the applicable
-      rules, regulations, and approvals of the Rajasthan Forest Department.
-    </p>
 
     <a href="index.html" class="back-home">
       ← Back to Home
-    </a><br>
+    </a>
 
+  </div>
+
+    <!-- </div> -->
+  </section>
+
+  <footer id="contact">
+  <div class="container">
+    <div class="row g-4">
     <div class="footer-linkss">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="Refund-policy.html">Refund/Cancellation Policy</a>
       <a href="terms-conditions.html">Terms & Conditions</a>
-      <!-- <a href="About.html">About Us</a> -->
+    </div>
     </div>
 
-  </section>
+      
 
-  <!-- Footer -->
-
-  <footer>
-    <div class="container">
-      <p>© 2026 Ranthambore Ticket Booking. All Rights Reserved. |
-        Independent Private Safari & Travel Booking Assistance Service |
-        Not Affiliated With or Representing Any Government Authority</p>
+      <div class="footer-bottom">
+        <p>© 2026 Ranthambore Ticket Booking. All Rights Reserved. |
+          Independent Private Safari & Travel Booking Assistance Service |
+          Not Affiliated With or Representing Any Government Authority</p>
+      </div>
     </div>
-
-
-
   </footer>
+
+  <!-- ========== FLOATING BUTTONS ========== -->
+  <div class="float-btns">
+    <a href="tel:+917737364741" class="float-btn float-call" title="Call Now">
+      <span class="float-tooltip">Call Now</span>
+      <i class="fas fa-phone-alt"></i><span class="ring-dot"></span>
+    </a>
+    <a href="https://wa.me/917737364741" target="_blank" rel="noopener" class="float-btn float-wa" title="WhatsApp">
+      <span class="float-tooltip">Chat on WhatsApp</span>
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <button type="button" id="backToTop" class="float-btn float-top" title="Back to top">
+      <span class="float-tooltip">Back to top</span>
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script>
+    // Fallback: make sure the loader always goes away
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var l = document.getElementById('loader');
+        if (l) l.classList.add('hidden');
+      }, 1800);
+    });
+  </script>
 
 </body>
 

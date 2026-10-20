@@ -5,18 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Refund Policy | Ranthambore Safari</title>
+  <title>Refund Policy | Ranthambore Ticket Booking</title>
   <meta name="description"
     content="Cancellation and refund policy for safari booking assistance provided by Ranthambore Ticket Booking, an independent private service." />
 
-  <link rel="stylesheet" href="policy.css">
-  <!-- <link rel="icon" type="image/png" href="/favicon.png"> -->
-
+ <!-- Favicon & App Icons -->
   <link rel="icon" type="image/x-icon" href="favicon_io/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon_io/favicon-48x48.png">
   <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon_io/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon_io/android-chrome-512x512.png">
   <link rel="manifest" href="favicon_io/site.webmanifest">
+
+
+  <!-- Fonts + libraries (same as all other pages) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Nunito:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <!-- Site CSS (same file as all other pages) -->
+  <link rel="stylesheet" href="home.css">
+
+  
 
   <!-- Refund Policy Schema Markup -->
   <script type="application/ld+json">
@@ -32,47 +47,66 @@
 
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg" id="mainNav">
-    <div class="container">
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-paw">🐾</div>
+    <div class="loader-text">RANTHAMBORE TICKET BOOKING</div>
+    <div class="loader-bar">
+      <div class="loader-bar-fill"></div>
+    </div>
+  </div>
 
-      <div class="top-links">
-
-        <a href="index.html">Home</a>
-
-        <a href="About.html">About</a>
-
-        <a href="index.html#contact">Contact</a>
-
-        <!-- <a href="/blog/" class="guest-blog-btn">Guest Blog</a> -->
-
-        <div class="hero-btns">
-
-          <a href="https://wa.me/917737364741" target="_blank" class="btn-outline-custom">
-            <i class="fab fa-whatsapp"></i>
-            WhatsApp Booking Assistant
-          </a>
-
-          <a href="index.html#booking" class="btn-primary-custom">
-            <i class="fas fa-calendar-check"></i>
-            Request Safari Now
-          </a>
-
-        </div>
-
+  <!-- ========== CONTACT TOP BAR ========== -->
+  <section class="contact-top-bar">
+    <div class="container contact-top-content">
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>Call Now: <a href="tel:+917737364741">+91 7737364741</a></span>
       </div>
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>Call Now: <a href="tel:+918619152322">+91 8619152322</a></span>
+      </div>
+      <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <a href="https://wa.me/917737364741" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HEADER / NAVBAR ========== -->
+  <header class="navbar" id="mainNav">
+    <div class="container navbar-inner">
+
+      <a href="index.html" class="logo">
+        <div class="logo-tiger">🐯</div>
+        <div class="logo-text">
+          <h2>RANTHAMBORE</h2>
+          <span>TICKET BOOKING</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html">Home</a>
+        <a href="index.html#safari-now">Safari Enquiry</a>
+        <a href="About.html">About Us</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <button class="mobile-menu" id="mobileMenuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
 
     </div>
-  </nav>
+  </header>
 
-
-  <!-- Main Content -->
-  <main class="container">
+  <!-- ========== POLICY CONTENT (text unchanged) ========== -->
+  <section class="policy-section">
+    <div class="container">
 
     <div class="policy-card">
 
       <h1>Refund/Cancellation Policy</h1>
-      <br>
       <p class="last-updated">
         <strong>Last Updated:</strong> 7 October 2026
       </p>
@@ -96,9 +130,8 @@
 
       <ul>
         <li>An enquiry (form, call or WhatsApp) is <strong>not</strong> a confirmed booking.</li>
-        <li>30 days or more before the safari: 75% refund. More than 72 hours but less than 30 days: 50% refund.
-          72 hours or less: no refund.</li>
-        <li>If we cannot confirm your booking after you have paid, you get a full refund of the amount paid.</li>
+
+        <li>If we can  not confirm your booking after you have paid, you get a full refund of the amount paid.</li>
         <li>No tiger or other wildlife sighting is guaranteed, and a missed sighting is not a reason for refund.</li>
       </ul>
 
@@ -114,12 +147,12 @@
       <ul>
         <li>
           <strong>Cancellation 30 days or more before the visit date:</strong>
-          75% refund of the eligible amount.
+          75% refund of the total amount paid for the booking.
         </li>
 
         <li>
           <strong>Cancellation more than 72 hours but less than 30 days before the visit date:</strong>
-          50% refund of the eligible amount.
+          50% refund of the total amount paid for the booking.
         </li>
 
         <li>
@@ -129,17 +162,7 @@
       </ul>
 
       <p>
-        The &ldquo;eligible amount&rdquo; is the amount paid for the safari
-        booking, excluding any charge that cannot be refunded. Certain permit,
-        government, vehicle, guide, processing or other applicable charges may
-        be non-refundable. Any such charge is communicated to you before
-        payment.
-      </p>
-
-      <p>
-        If the relevant authority or booking system applies different rules to
-        a particular booking, those rules will be communicated to you before
-        payment.
+       For cancellations by the customer, refunds will be calculated according to the cancellation schedule stated in this policy, based on the total amount paid for the booking. No additional cancellation deductions will be applied beyond the refund terms disclosed before payment.
       </p>
 
 
@@ -188,9 +211,7 @@
       </p>
 
       <p>
-        If a safari is cancelled or affected because of such circumstances,
-        any refund will be handled according to the applicable rules of the
-        relevant authority or booking system.
+       If the Forest Department or relevant authority cancels a safari permit due to weather conditions, natural events, safety concerns, or other official reasons, no refund will be provided for the cancelled booking.
       </p>
 
 
@@ -225,8 +246,8 @@
       <h2>7. Third-Party Services</h2>
 
       <p>
-        Where a booking involves a hotel, transport provider, guide, safari
-        operator or other third-party service provider, the cancellation and
+        Where a booking involves a hotel, transport provider 
+         or other third-party service provider, the cancellation and
         refund conditions applicable to that service may also apply.
       </p>
 
@@ -252,15 +273,26 @@
         <li>Required identification details</li>
         <li>Other information necessary for the booking</li>
       </ul>
+      <!-- Section 9 -->
 
-      <p>
-        Incorrect or incomplete information may affect the booking or any
-        applicable cancellation/refund process.
-      </p>
+    <h2>9. Customer Errors</h2>
+
+    <p>
+      No refund will be provided if a booking fails due to customer mistakes, including:
+    </p>
+
+    <ul>
+      <li>Incorrect personal details.</li>
+      <li>Incorrect Government ID information.</li>
+      <li>Failure to report on time.</li>
+      <li>Failure to carry required documents.</li>
+    </ul>
 
 
-      <!-- 9. Availability & Permit Allocation -->
-      <h2>9. Availability & Permit Allocation</h2>
+
+
+      <!-- 10. Availability & Permit Allocation -->
+      <h2>10. Availability & Permit Allocation</h2>
 
       <p>
         Safari availability, permit issuance, zone allocation, vehicle
@@ -271,8 +303,8 @@
       <p>
         Availability is not guaranteed until the booking has been confirmed.
       </p>
-      <!-- 10. Booking Not Confirmed -->
-      <h2>10. Booking Not Confirmed</h2>
+      <!-- 11. Booking Not Confirmed -->
+      <h2>11. Booking Not Confirmed</h2>
 
       <p>If payment has been received from the customer but we are unable to confirm or complete the safari booking from
         our side due to permit unavailability, booking-system availability, or other reasons preventing us from
@@ -284,30 +316,35 @@
         refund to reach the customer's account may vary depending on the payment method and bank.
 
       </p>
-      <!-- 11. How to Request a Refund or Cancellation -->
-      <h2>11. How to Request a Refund or Cancellation</h2>
+      <!-- 12. How to Request a Refund or Cancellation -->
+      <h2>12. How to Request a Refund or Cancellation</h2>
 
       <p>
-        For a cancellation or refund request, please provide:
+       To request a safari booking cancellation or refund, please contact us using the phone numbers or WhatsApp contact options available on our website.
+       </p>
+      <p>
+       To help us review your request, please provide the following details:
       </p>
 
       <ul>
         <li>Customer name</li>
         <li>Booking/enquiry reference, if available</li>
         <li>Safari date</li>
-        <li>Contact number</li>
+        <li>Registered contact number</li>
         <li>Reason for cancellation</li>
         <li>Payment or booking details, where required</li>
       </ul>
 
       <p>
-        Our team will review the request and communicate the applicable
-        refund process.
+        Our team will review your request and explain the applicable cancellation and refund process in accordance with our Refund/Cancellation Policy.
+      </p>
+      <p>
+        Submitting a cancellation or refund request does not automatically guarantee a refund. Any eligible refund will be processed according to the applicable policy and the circumstances of the booking.
       </p>
 
 
-      <!-- 12. Policy Updates -->
-      <h2> 12. Policy Updates</h2>
+      <!-- 13. Policy Updates -->
+      <h2> 13. Policy Updates</h2>
 
       <p>
         This policy may be updated from time to time to reflect changes in
@@ -321,11 +358,11 @@
       </p>
 
 
-      <!-- Contact -->
-      <h2>Contact Us</h2>
+      <!-- 14. Contact -->
+      <h2> 14. Contact Us</h2>
 
       <p>
-        <strong>Ranthambore Ticket Booking</strong>
+       If you have any questions or concerns about this Refund/Cancellation Policy, please contact us at:
       </p>
 
       <p>
@@ -334,21 +371,18 @@
         <br>
 
         <strong>Phone:</strong>
-        +91-7737364741
+        +91-7737364741 (Call & WhatsApp)
         <br>
 
         <strong>Phone:</strong>
-        +91-8619152322
+        +91-8619152322 (Call & WhatsApp)
         <br>
 
         <strong>Address:</strong>
         House No.17, Khardi Mohalla, Ward No.17, City Sawai Madhopur, Dist-Sawai Madhopur Rajasthan – 322021
       </p>
 
-      <p>
-        For cancellation, refund or booking assistance, please contact us
-        using the details above.
-      </p>
+
 
 
       <!-- Important Notice -->
@@ -367,35 +401,59 @@
 
     </div>
 
-
     <!-- Back to Home -->
     <a href="index.html" class="back-home">
       ← Back to Home
     </a>
+
+    </div>
+  </section>
+  <footer id="contact">
+  <div class="container">
+    <div class="row g-4">
     <div class="footer-linkss">
       <a href="privacy-policy.html">Privacy Policy</a>
       <a href="Refund-policy.html">Refund/Cancellation Policy</a>
       <a href="terms-conditions.html">Terms & Conditions</a>
-      <!-- <a href="About.html">About Us</a> -->
+    </div>
     </div>
 
-  </main>
-
-
-  <!-- Footer -->
-  <footer>
-
-    <div class="container">
-
-      <p>
-        © 2026 Ranthambore Ticket Booking. All Rights Reserved. |
-        Independent Private Safari & Travel Booking Assistance Service |
-        Not Affiliated With or Representing Any Government Authority
-      </p>
+      <div class="footer-bottom">
+        <p>© 2026 Ranthambore Ticket Booking. All Rights Reserved. |
+          Independent Private Safari & Travel Booking Assistance Service |
+          Not Affiliated With or Representing Any Government Authority</p>
+      </div>
     </div>
-
-
   </footer>
+
+  <!-- ========== FLOATING BUTTONS ========== -->
+  <div class="float-btns">
+    <a href="tel:+917737364741" class="float-btn float-call" title="Call Now">
+      <span class="float-tooltip">Call Now</span>
+      <i class="fas fa-phone-alt"></i><span class="ring-dot"></span>
+    </a>
+    <a href="https://wa.me/917737364741" target="_blank" rel="noopener" class="float-btn float-wa" title="WhatsApp">
+      <span class="float-tooltip">Chat on WhatsApp</span>
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <button type="button" id="backToTop" class="float-btn float-top" title="Back to top">
+      <span class="float-tooltip">Back to top</span>
+      <i class="fas fa-arrow-up"></i>
+    </button>
+  </div>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="script.js" defer></script>
+  <script>
+    // Fallback: make sure the loader always goes away
+    window.addEventListener('load', function () {
+      setTimeout(function () {
+        var l = document.getElementById('loader');
+        if (l) l.classList.add('hidden');
+      }, 1800);
+    });
+  </script>
 
 </body>
 

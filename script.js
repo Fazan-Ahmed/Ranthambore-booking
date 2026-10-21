@@ -109,10 +109,21 @@ document.addEventListener("DOMContentLoaded", function () {
         .sendForm("service_zh4ejsa", "template_a8ago8p", form)
         .then(function () {
           if (bookingFormWrap) bookingFormWrap.style.display = "none";
+
+          const formTitle = document.querySelector("#safari-now .form-title");
+          const formSub = document.querySelector("#safari-now .form-sub");
+          if (formTitle) formTitle.style.display = "none";
+          if (formSub) formSub.style.display = "none";
+
           if (successMsg) successMsg.classList.add("visible");
           form.reset();
           form.classList.remove("was-validated");
         })
+
+
+
+
+
         .catch(function (error) {
           console.error("EmailJS error:", error);
           if (formErrorMsg) formErrorMsg.classList.add("visible");
